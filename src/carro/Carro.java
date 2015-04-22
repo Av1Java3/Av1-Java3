@@ -26,5 +26,41 @@ public class Carro
 		cor = _cor;
 		
 	}
+
+	public String getChassi() {
+		return chassi;
+	}
+
+	public float getPreco() {
+		return preco;
+	}
+
+	public Montadora getMontadora() {
+		return montadora;
+	}
+
+	public Modelo getModelo() {
+		return modelo;
+	}
+
+	public Motorizacao getMotorizacao() {
+		return motorizacao;
+	}
+
+	public Cambio getCambio() {
+		return cambio;
+	}
+
+	public Tipo getTipo() {
+		return tipo;
+	}
+
+	public Cor getCor() {
+		return cor;
+	}
+	
+	
+	
+	
 	
 }

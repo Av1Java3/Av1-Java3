@@ -2,6 +2,12 @@ package carro;
 
 public enum Cambio {
 
-	AUTOM햀ICO, SEMI_AUTOM햀ICO, MANUAL;
+	AUTOM햀ICO(1), SEMI_AUTOM햀ICO(2), MANUAL(3);
 	
+	int ref;
+	private Cambio(int _ref)
+	{
+		ref = _ref;
+		
+	}
 }
