@@ -1,17 +1,21 @@
 package motocicleta;
 
+import carro.Cor;
+
+
+
 public class Motocicleta
 {
 	String chassi;
 	float preco;
-	Cor cor;
-	Cilindrada cilindrada;
-	CapTanque capTanque;
-	Modelo modelo;
-	Montadora montadora;
-	Tipo tipo;
+	MCor cor;
+	MCilindrada cilindrada;
+	MCapTanque capTanque;
+	MModelo modelo;
+	MMontadora montadora;
+	MTipo tipo;
 	
-	public Motocicleta(float _preco,String _chassi,Cor _cor,Cilindrada _cilindrada,CapTanque _capTanque,Modelo _modelo,Montadora _montadora,Tipo _tipo)
+	public Motocicleta(String _chassi,float _preco,MCor _cor,MCilindrada _cilindrada,MCapTanque _capTanque,MModelo _modelo,MMontadora _montadora,MTipo _tipo)
 	{
 		preco = _preco;
 		chassi = _chassi;
@@ -20,9 +24,51 @@ public class Motocicleta
 		capTanque = _capTanque;
 		modelo = _modelo;
 		tipo = _tipo;
+		montadora = _montadora;
 		
 		
 	}
+
+	
+
+
+
+
+
+
+
+
+
+	@Override
+	public boolean equals(Object obj) 
+	{
+		if (this == obj)
+		{
+			return true;
+		}
+		if (obj == null) 
+		{
+			return false;
+		}
+		if (!(obj instanceof Motocicleta)) 
+		{
+			return false;
+		}
+		Motocicleta other = (Motocicleta) obj;
+		if (chassi == null) 
+		{
+			if (other.chassi != null) 
+			{
+				return false;
+			}
+		} else if (!chassi.equals(other.chassi)) 
+		{
+			return false;
+		}
+		return true;
+	}
+
+
 
 	public float getPreco() {
 		return preco;
@@ -33,27 +79,30 @@ public class Motocicleta
 	}
 
 	
-	public Cor getCor() {
+	public MCor getCor() {
 		return cor;
 	}
 
-	public Cilindrada getCilindrada() {
+	
+
+	public MCilindrada getCilindrada() {
 		return cilindrada;
 	}
 
-	public CapTanque getCapTanque() {
+
+	public MCapTanque getCapTanque() {
 		return capTanque;
 	}
 
-	public Modelo getModelo() {
+	public MModelo getModelo() {
 		return modelo;
 	}
 
-	public Montadora getMontadora() {
+	public MMontadora getMontadora() {
 		return montadora;
 	}
 
-	public Tipo getTipo() {
+	public MTipo getTipo() {
 		return tipo;
 	}
 	

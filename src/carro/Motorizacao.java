@@ -3,12 +3,6 @@ package carro;
 public enum Motorizacao 
 {
 
-	M10(1), M12(2), M14(3), M16(4), M18(5), M20(6), M22(7);
-	
-	int ref;
-	private Motorizacao(int _ref)
-	{
-		ref = _ref;
-		
-	}
+	M10, M12, M14, M16, M18, M20, M22;
+
 }

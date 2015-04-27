@@ -3,9 +3,13 @@ package loja;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import motocicleta.CapTanque;
-import motocicleta.Cilindrada;
+import motocicleta.MCapTanque;
+import motocicleta.MCilindrada;
+import motocicleta.MModelo;
+import motocicleta.MMontadora;
+import motocicleta.MTipo;
 import motocicleta.Motocicleta;
+import motocicleta.MCor;
 import carro.Cambio;
 import carro.Carro;
 import carro.Cor;
@@ -36,17 +40,17 @@ public class Loja
 		float _preco = 0;
 	
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Digite numero do modelo: (1)CIVIC, (2)S2000, (3)GOL");
+		System.out.println("Digite numero do modelo: (0)CIVIC, (1)S2000, (2)GOL");
 		_modelo = Modelo.values()[scan.nextInt()];
-		System.out.println("Digite numero do cambio:AUTOMÁTICO(1), SEMI_AUTOMÁTICO(2), MANUAL(3)");
+		System.out.println("Digite numero do cambio:AUTOMÁTICO(0), SEMI_AUTOMÁTICO(1), MANUAL(2)");
 		_cambio = Cambio.values()[scan.nextInt()];
-		System.out.println("Digite numero da Cor:BRANCO(1), CINZA(2), PRETO(3), VERMELHO(4), VINHO(5), AZUL(6), MARROM(7), VERDE(8), OCRE(9)");
+		System.out.println("Digite numero da Cor:BRANCO(0), CINZA(1), PRETO(2), VERMELHO(3), VINHO(4), AZUL(5), MARROM(6), VERDE(7), OCRE(8)");
 		_cor = Cor.values()[scan.nextInt()];
-		System.out.println("Digite numero da montadora: YAMAHA(1),HONDA(2),HARLEY_DAVIDSON(3),KAWASAKI(4)");
+		System.out.println("Digite numero da montadora: YAMAHA(0),HONDA(1),HARLEY_DAVIDSON(2),KAWASAKI(3)");
 		_montadora = Montadora.values()[scan.nextInt()];
-		System.out.println("Digite numero do tipo: SEDAN(1), HATCH(2), ESPORTIVO(3), CONVERSIVEL(4), COUPE(5)");
+		System.out.println("Digite numero do tipo: SEDAN(0), HATCH(1), ESPORTIVO(2), CONVERSIVEL(3), COUPE(4)");
 		_tipo = Tipo.values()[scan.nextInt()];
-		System.out.println("Digite numero do motor: M10(1), M12(2), M14(3), M16(4), M18(5), M20(6), M22(7)");
+		System.out.println("Digite numero do motor: M10(0), M12(1), M14(2), M16(3), M18(4), M20(5), M22(6)");
 		_motorizacao = Motorizacao.values()[scan.nextInt()];
 		System.out.println("Digite o chassi");
 		_chassi = scan.next();
@@ -61,35 +65,35 @@ public class Loja
 	{
 		String _chassi = "";
 		float _preco= 0;
-		Cor _cor = null;
-		Cilindrada _cilindrada = null;
-		CapTanque _capTanque = null;
-		Modelo _modelo = null;
-		Tipo _tipo = null;
-		Montadora _montadora = null;
+		MCor _cor = null;
+		MCilindrada _cilindrada = null;
+		MCapTanque _capTanque = null;
+		motocicleta.MModelo _modelo = null;
+		motocicleta.MTipo _tipo = null;
+		motocicleta.MMontadora _montadora = null;
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("Qual é o chassi");
+		System.out.println("Qual é o chassi?");
 		_chassi = scan.next();
 		System.out.println("Qual o preço?");
 		_preco = scan.nextFloat();
-		System.out.println("Qual o numero da cor: PRETA(1),PRATA(2),AMARELA(3),VERDE(4)");
-		_cor = Cor.values()[scan.nextInt()];
-		System.out.println("Qual é o numero da cilindrada:C1000(1),C900(2),C850(3),C883(4),C750(5)");
-		_cilindrada = Cilindrada.values()[scan.nextInt()];
-		System.out.println("Qual é a capacidade do tanque:L12_5(1),L17(2),L17_8(3)");
-		_capTanque = CapTanque.values()[scan.nextInt()];
-		System.out.println("Qual o numero do modelo: VMAX(1),SUPER_TENERE(2),SUPER_TENERE_DX(3),CB_1000R(4),CBR_1000RR_FIREBLADE(5),SHADOW_750(6),IRON_883(7),CUSTOM_1200(8),STREET_BOB(9),VULCAN_900_CLASSIC(10),VULCAN_900_CUSTOM(11),VULCAN_900_CLASSIC_LT(12)");
-		_modelo = Modelo.values()[scan.nextInt()];
-		System.out.println("Qual o tipo: CRUISER(1),SPORT(2),OFFROAD(3)");
-		_tipo = Tipo.values()[scan.nextInt()];
-		System.out.println("Qual a montadora:YAMAHA(1),HONDA(2),HARLEY_DAVIDSON(3),KAWASAKI(4)");
-		_montadora = Montadora.values()[scan.nextInt()];
+		System.out.println("Qual o numero da cor: PRETA(0),PRATA(1),AMARELA(2),VERDE(3)");
+		_cor = MCor.values()[scan.nextInt()];
+		System.out.println("Qual é o numero da cilindrada:C1000(0),C900(1),C850(2),C883(3),C750(4)");
+		_cilindrada = MCilindrada.values()[scan.nextInt()];
+		System.out.println("Qual é a capacidade do tanque:L12_5(0),L17(1),L17_8(2)");
+		_capTanque = MCapTanque.values()[scan.nextInt()];
+		System.out.println("Qual o numero do modelo: VMAX(0),SUPER_TENERE(1),SUPER_TENERE_DX(2),CB_1000R(3),CBR_1000RR_FIREBLADE(4),SHADOW_750(5),IRON_883(6),CUSTOM_1200(7),STREET_BOB(8),VULCAN_900_CLASSIC(9),VULCAN_900_CUSTOM(10),VULCAN_900_CLASSIC_LT(11)");
+		_modelo = MModelo.values()[scan.nextInt()];
+		System.out.println("Qual o tipo: CRUISER(0),SPORT(1),OFFROAD(2)");
+		_tipo = MTipo.values()[scan.nextInt()];
+		System.out.println("Qual a montadora:YAMAHA(0),HONDA(1),HARLEY_DAVIDSON(2),KAWASAKI(3)");
+		_montadora = MMontadora.values()[scan.nextInt()];
 		
-		Motocicleta xyz = new Motocicleta(__preco, __chassi, __cor, __cilindrada, __capTanque, __modelo, __montadora, __tipo);
-		estoqueMotos.add(xyz);
+		Motocicleta zxy = new Motocicleta(_chassi, _preco, _cor, _cilindrada, _capTanque, _modelo, _montadora, _tipo);
 	}
+	
 	public void listarEstoquedeCarros()
 	{
 		for (Carro x: estoqueCarros)
@@ -112,4 +116,82 @@ public class Loja
 			System.out.println("-----------------------------------------------------------------------------------");
 		}
 	}
+	public void buscarCarro()
+	{
+		String aux = "";
+		Scanner scan  = new Scanner(System.in);
+		System.out.println("Insira chassi");
+		aux = scan.next();
+		for(Carro x: estoqueCarros)
+		{
+			if(x.getChassi().equals(aux))
+				System.out.println("Chassi encontrado:"+x.getModelo()+" "+x.getMontadora()+" "+x.getTipo());
+			else
+				System.out.println("No Bacon for You motherfucker");
+		}
+	}
+	
+	public void buscarMotocicleta()
+	{
+		String aux = "";
+		Scanner scan  = new Scanner(System.in);
+		System.out.println("Insira chassi");
+		aux = scan.next();
+		for(Motocicleta x: estoqueMotos)
+		{
+			if(x.getChassi().equals(aux))
+				System.out.println("Chassi encontrado:"+x.getModelo()+" "+x.getMontadora()+" "+x.getTipo());
+
+			else
+				System.out.println("Chassi não encontrado");
+		}
+	}
+	
+	public void pesquisarCarro()
+	{
+		Scanner scan  = new Scanner(System.in);
+		System.out.println("Digite uma Cor");
+		String auxCor = scan.next();
+		System.out.println("Digite um Tipo");
+		String auxTipo = scan.next();
+		System.out.println("Digite uma Montadora");
+		String auxMontadora = scan.next();
+		
+		for(Carro x : estoqueCarros)
+		{
+			if(x.getCor().toString().equals(auxCor))
+				if(x.getTipo().toString().equals(auxTipo))
+					if(x.getMontadora().toString().equals(auxMontadora))
+					{
+						System.out.println("Montadora:"+x.getMontadora()+" "+"Modelo:"+x.getModelo()+" "+"Cambio:"+x.getCambio());
+						System.out.println("Chassi:"+x.getChassi()+" "+"Preco:"+x.getPreco());
+						System.out.println("Cor:"+x.getCor()+" "+"Tipo:"+x.getTipo()+" "+"Motorizacao:"+x.getMotorizacao());
+						System.out.println("------------------------------------------------------------------------------");
+					}
+		}
+	}
+	
+	public void pesquisarMotos()
+	{
+		Scanner scan  = new Scanner(System.in);
+		System.out.println("Digite uma Cor");
+		String auxMCor = scan.next();
+		System.out.println("Digite um Tipo");
+		String auxMTipo = scan.next();
+		System.out.println("Digite uma Montadora");
+		String auxMmontadora = scan.next();
+		
+		for(Motocicleta y : estoqueMotos)
+		{
+			if(y.getCor().toString().equals(auxMCor))
+				if(y.getTipo().toString().equals(auxMTipo))
+					if(y.getMontadora().toString().equals(auxMmontadora))
+					{
+						System.out.println("Modelo:"+y.getModelo()+" "+"Cor:"+y.getCor()+" "+"Montadora:"+y.getMontadora());
+						System.out.println("Tipo:"+y.getTipo()+" "+"Cilindrada:"+y.getCilindrada()+" "+"Capacidade do tanque"+y.getCapTanque());
+						System.out.println("-----------------------------------------------------------------------------------");
+					}
+		}
+	}
+	
 }

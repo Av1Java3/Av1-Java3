@@ -26,6 +26,38 @@ public class Carro
 		cor = _cor;
 		
 	}
+	
+	@Override
+	public boolean equals(Object obj) 
+	{
+		if (this == obj) 
+		{
+			return true;
+		}
+		if (obj == null)
+		{
+			return false;
+		}
+		if (!(obj instanceof Carro)) 
+		{
+			return false;
+		}
+		Carro other = (Carro) obj;
+		if (chassi == null) 
+		{
+			if (other.chassi != null) 
+			{
+				return false;
+			}
+		} 
+		else if (!chassi.equals(other.chassi))
+		{
+			return false;
+		}
+		return true;
+	}
+
+
 
 	public String getChassi() {
 		return chassi;
