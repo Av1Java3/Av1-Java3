@@ -1,6 +1,7 @@
 package motocicleta;
 
-import carro.Cor;
+import veiculos.Cores;
+
 
 
 
@@ -8,14 +9,14 @@ public class Motocicleta
 {
 	String chassi;
 	float preco;
-	MCor cor;
+	Cores cor;
 	MCilindrada cilindrada;
 	MCapTanque capTanque;
 	MModelo modelo;
 	MMontadora montadora;
 	MTipo tipo;
 	
-	public Motocicleta(String _chassi,float _preco,MCor _cor,MCilindrada _cilindrada,MCapTanque _capTanque,MModelo _modelo,MMontadora _montadora,MTipo _tipo)
+	public Motocicleta(String _chassi,float _preco,Cores _cor,MCilindrada _cilindrada,MCapTanque _capTanque,MModelo _modelo,MMontadora _montadora,MTipo _tipo)
 	{
 		preco = _preco;
 		chassi = _chassi;
@@ -79,7 +80,7 @@ public class Motocicleta
 	}
 
 	
-	public MCor getCor() {
+	public Cores getCor() {
 		return cor;
 	}
 

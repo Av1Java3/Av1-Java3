@@ -1,5 +1,7 @@
 package carro;
 
+import veiculos.Cores;
+
 public class Carro 
 {
 	
@@ -10,10 +12,10 @@ public class Carro
 	Motorizacao motorizacao;
 	Cambio cambio;
 	Tipo tipo;
-	Cor cor;
+	Cores cor;
 	
 	public Carro (String _chassi, float _preco, Montadora _montadora, Modelo _modelo,
-	Motorizacao _motorizacao, Cambio _cambio, Tipo _tipo, Cor _cor)
+	Motorizacao _motorizacao, Cambio _cambio, Tipo _tipo, Cores _cor)
 	{
 		
 		chassi = _chassi;
@@ -87,7 +89,7 @@ public class Carro
 		return tipo;
 	}
 
-	public Cor getCor() {
+	public Cores getCor() {
 		return cor;
 	}
 	

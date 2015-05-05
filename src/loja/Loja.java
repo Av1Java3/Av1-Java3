@@ -9,10 +9,9 @@ import motocicleta.MModelo;
 import motocicleta.MMontadora;
 import motocicleta.MTipo;
 import motocicleta.Motocicleta;
-import motocicleta.MCor;
+import veiculos.Cores;
 import carro.Cambio;
 import carro.Carro;
-import carro.Cor;
 import carro.Modelo;
 import carro.Montadora;
 import carro.Motorizacao;
@@ -31,7 +30,7 @@ public class Loja
 	public void adicionarCarro()
 	{
 		Cambio _cambio = null;
-		Cor _cor = null;
+		Cores _cor = null;
 		Modelo _modelo=null;
 		Montadora _montadora = null;
 		Tipo _tipo = null;
@@ -45,7 +44,7 @@ public class Loja
 		System.out.println("Digite numero do cambio:AUTOMÁTICO(0), SEMI_AUTOMÁTICO(1), MANUAL(2)");
 		_cambio = Cambio.values()[scan.nextInt()];
 		System.out.println("Digite numero da Cor:BRANCO(0), CINZA(1), PRETO(2), VERMELHO(3), VINHO(4), AZUL(5), MARROM(6), VERDE(7), OCRE(8)");
-		_cor = Cor.values()[scan.nextInt()];
+		_cor = Cores.values()[scan.nextInt()];
 		System.out.println("Digite numero da montadora: YAMAHA(0),HONDA(1),HARLEY_DAVIDSON(2),KAWASAKI(3)");
 		_montadora = Montadora.values()[scan.nextInt()];
 		System.out.println("Digite numero do tipo: SEDAN(0), HATCH(1), ESPORTIVO(2), CONVERSIVEL(3), COUPE(4)");
@@ -65,7 +64,7 @@ public class Loja
 	{
 		String _chassi = "";
 		float _preco= 0;
-		MCor _cor = null;
+		Cores _cor = null;
 		MCilindrada _cilindrada = null;
 		MCapTanque _capTanque = null;
 		motocicleta.MModelo _modelo = null;
@@ -79,7 +78,7 @@ public class Loja
 		System.out.println("Qual o preço?");
 		_preco = scan.nextFloat();
 		System.out.println("Qual o numero da cor: PRETA(0),PRATA(1),AMARELA(2),VERDE(3)");
-		_cor = MCor.values()[scan.nextInt()];
+		_cor = Cores.values()[scan.nextInt()];
 		System.out.println("Qual é o numero da cilindrada:C1000(0),C900(1),C850(2),C883(3),C750(4)");
 		_cilindrada = MCilindrada.values()[scan.nextInt()];
 		System.out.println("Qual é a capacidade do tanque:L12_5(0),L17(1),L17_8(2)");
