@@ -45,6 +45,7 @@ public class Main
 		case 8:
 			doom.pesquisarMotos();break;
 		default:
+			System.out.println("Opção inválida. Escolha uma das opções listadas.");
 			break;
 		}
 			
