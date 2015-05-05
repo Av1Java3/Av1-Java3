@@ -1,6 +1,7 @@
 package motocicleta;
 
 import veiculos.Cores;
+import veiculos.Montadoras;
 
 
 
@@ -12,11 +13,11 @@ public class Motocicleta
 	Cores cor;
 	MCilindrada cilindrada;
 	MCapTanque capTanque;
-	MModelo modelo;
-	MMontadora montadora;
-	MTipo tipo;
+	Modelo modelo;
+	Montadoras montadora;
+	Tipo tipo;
 	
-	public Motocicleta(String _chassi,float _preco,Cores _cor,MCilindrada _cilindrada,MCapTanque _capTanque,MModelo _modelo,MMontadora _montadora,MTipo _tipo)
+	public Motocicleta(String _chassi,float _preco,Cores _cor,MCilindrada _cilindrada,MCapTanque _capTanque,Modelo _modelo,Montadoras _montadora,Tipos _tipo)
 	{
 		preco = _preco;
 		chassi = _chassi;
@@ -99,7 +100,7 @@ public class Motocicleta
 		return modelo;
 	}
 
-	public MMontadora getMontadora() {
+	public Montadoras getMontadora() {
 		return montadora;
 	}
 

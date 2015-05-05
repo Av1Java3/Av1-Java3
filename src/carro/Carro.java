@@ -2,7 +2,7 @@ package carro;
 
 import veiculos.Cores;
 
-public class Carro 
+public class Carro extends veiculos
 {
 	
 	String chassi;

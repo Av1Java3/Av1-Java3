@@ -5,11 +5,11 @@ import java.util.Scanner;
 
 import motocicleta.MCapTanque;
 import motocicleta.MCilindrada;
-import motocicleta.MModelo;
-import motocicleta.MMontadora;
-import motocicleta.MTipo;
 import motocicleta.Motocicleta;
 import veiculos.Cores;
+import veiculos.Montadoras;
+import veiculos.Modelo;
+import veiculos.Tipos;
 import carro.Cambio;
 import carro.Carro;
 import carro.Modelo;
@@ -67,9 +67,9 @@ public class Loja
 		Cores _cor = null;
 		MCilindrada _cilindrada = null;
 		MCapTanque _capTanque = null;
-		motocicleta.MModelo _modelo = null;
-		motocicleta.MTipo _tipo = null;
-		motocicleta.MMontadora _montadora = null;
+		Modelo _modelo = null;
+		Tipos _tipo = null;
+		Montadoras _montadora = null;
 		
 		Scanner scan = new Scanner(System.in);
 		
@@ -84,11 +84,11 @@ public class Loja
 		System.out.println("Qual é a capacidade do tanque:L12_5(0),L17(1),L17_8(2)");
 		_capTanque = MCapTanque.values()[scan.nextInt()];
 		System.out.println("Qual o numero do modelo: VMAX(0),SUPER_TENERE(1),SUPER_TENERE_DX(2),CB_1000R(3),CBR_1000RR_FIREBLADE(4),SHADOW_750(5),IRON_883(6),CUSTOM_1200(7),STREET_BOB(8),VULCAN_900_CLASSIC(9),VULCAN_900_CUSTOM(10),VULCAN_900_CLASSIC_LT(11)");
-		_modelo = MModelo.values()[scan.nextInt()];
+		_modelo = Modelo.values()[scan.nextInt()];
 		System.out.println("Qual o tipo: CRUISER(0),SPORT(1),OFFROAD(2)");
-		_tipo = MTipo.values()[scan.nextInt()];
-		System.out.println("Qual a montadora:YAMAHA(0),HONDA(1),HARLEY_DAVIDSON(2),KAWASAKI(3)");
-		_montadora = MMontadora.values()[scan.nextInt()];
+		_tipo = Tipos.values()[scan.nextInt()];
+		System.out.println("Qual a montadora:HONDA(4),HARLEY_DAVIDSON(5),YAMAHA(6)");
+		_montadora = Montadoras.values()[scan.nextInt()];
 		
 		Motocicleta zxy = new Motocicleta(_chassi, _preco, _cor, _cilindrada, _capTanque, _modelo, _montadora, _tipo);
 	}
