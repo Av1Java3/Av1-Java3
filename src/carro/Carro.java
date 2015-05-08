@@ -1,8 +1,8 @@
 package carro;
 
-import veiculos.Cores;
+import veiculos.*;
 
-public class Carro extends veiculos
+public class Carro extends Veiculos
 {
 	
 	String chassi;
