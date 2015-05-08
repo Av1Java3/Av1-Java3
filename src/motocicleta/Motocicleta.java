@@ -2,14 +2,8 @@ package motocicleta;
 
 import veiculos.*;
 
-
-
-
 public class Motocicleta extends Veiculos
 {
-	String chassi;
-	float preco;
-	Cores cor;
 	MCilindrada cilindrada;
 	MCapTanque capTanque;
 	
@@ -22,50 +16,9 @@ public class Motocicleta extends Veiculos
 		capTanque = _capTanque;
 		modelo = _modelo;
 		tipo = _tipo;
-		montadora = _montadora;
-		
+		montadora = _montadora;		
 		
 	}
-
-	
-
-
-
-
-
-
-
-
-
-	@Override
-	public boolean equals(Object obj) 
-	{
-		if (this == obj)
-		{
-			return true;
-		}
-		if (obj == null) 
-		{
-			return false;
-		}
-		if (!(obj instanceof Motocicleta)) 
-		{
-			return false;
-		}
-		Motocicleta other = (Motocicleta) obj;
-		if (chassi == null) 
-		{
-			if (other.chassi != null) 
-			{
-				return false;
-			}
-		} else if (!chassi.equals(other.chassi)) 
-		{
-			return false;
-		}
-		return true;
-	}
-
 
 
 	public float getPreco() {

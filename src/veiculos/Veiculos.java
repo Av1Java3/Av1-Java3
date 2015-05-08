@@ -6,6 +6,6 @@ public class Veiculos
 	public Modelo modelo;
 	public Montadoras montadora;
 	public Tipos tipo;
-	
-
+	public float preco;
+	public String chassi;
 }
