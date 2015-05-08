@@ -1,21 +1,17 @@
 package motocicleta;
 
-import veiculos.Cores;
-import veiculos.Montadoras;
+import veiculos.*;
 
 
 
 
-public class Motocicleta
+public class Motocicleta extends Veiculos
 {
 	String chassi;
 	float preco;
 	Cores cor;
 	MCilindrada cilindrada;
 	MCapTanque capTanque;
-	Modelo modelo;
-	Montadoras montadora;
-	Tipo tipo;
 	
 	public Motocicleta(String _chassi,float _preco,Cores _cor,MCilindrada _cilindrada,MCapTanque _capTanque,Modelo _modelo,Montadoras _montadora,Tipos _tipo)
 	{
@@ -96,7 +92,7 @@ public class Motocicleta
 		return capTanque;
 	}
 
-	public MModelo getModelo() {
+	public Modelo getmodelo() {
 		return modelo;
 	}
 
@@ -104,7 +100,7 @@ public class Motocicleta
 		return montadora;
 	}
 
-	public MTipo getTipo() {
+	public Tipos gettipo() {
 		return tipo;
 	}
 	
