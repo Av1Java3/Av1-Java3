@@ -96,7 +96,7 @@ public class Motocicleta extends Veiculos
 		return modelo;
 	}
 
-	public Montadoras getMontadora() {
+	public Montadoras getmontadora() {
 		return montadora;
 	}
 

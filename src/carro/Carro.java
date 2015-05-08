@@ -7,15 +7,13 @@ public class Carro extends Veiculos
 	
 	String chassi;
 	float preco;
-	Montadora montadora;
-	Modelo modelo;
 	Motorizacao motorizacao;
 	Cambio cambio;
-	Tipo tipo;
-	Cores cor;
 	
-	public Carro (String _chassi, float _preco, Montadora _montadora, Modelo _modelo,
-	Motorizacao _motorizacao, Cambio _cambio, Tipo _tipo, Cores _cor)
+
+	
+	public Carro (String _chassi, float _preco, Montadoras _montadora, Modelo _modelo,
+	Motorizacao _motorizacao, Cambio _cambio, Tipos _tipo, Cores _cor)
 	{
 		
 		chassi = _chassi;
@@ -69,7 +67,7 @@ public class Carro extends Veiculos
 		return preco;
 	}
 
-	public Montadora getMontadora() {
+	public Montadoras getMontadora() {
 		return montadora;
 	}
 
@@ -85,7 +83,7 @@ public class Carro extends Veiculos
 		return cambio;
 	}
 
-	public Tipo getTipo() {
+	public Tipos getTipo() {
 		return tipo;
 	}
 
