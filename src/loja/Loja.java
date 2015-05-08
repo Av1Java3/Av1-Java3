@@ -1,7 +1,9 @@
 package loja;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
+
 import motocicleta.MCapTanque;
 import motocicleta.MCilindrada;
 import motocicleta.Motocicleta;
@@ -33,24 +35,89 @@ public class Loja
 		Motorizacao _motorizacao = null; 
 		String _chassi = "";
 		float _preco = 0;
-	
+		boolean loop = false;
+		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Digite numero correspondente ao modelo: (0)CIVIC, (1)S2000, (2)GOL");
-		_modelo = Modelo.values()[scan.nextInt()];
-		System.out.println("Digite numero correspondente ao cambio:AUTOMÁTICO(0), SEMI_AUTOMÁTICO(1), MANUAL(2)");
-		_cambio = Cambio.values()[scan.nextInt()];
-		System.out.println("Digite numero correspondente à cor: PRETO(3), BRANCO(4), PRATA(5)");
-		_cor = Cores.values()[scan.nextInt()];
-		System.out.println("Digite numero correspondente à montadora: WOLKSWAG(0), FIAT(1), CHEVROLET(2), HONDA(3)");
-		_montadora = Montadoras.values()[scan.nextInt()];
-		System.out.println("Digite numero do tipo: SEDAN(0), HATCH(1), ESPORTIVO(2)");
-		_tipo = Tipos.values()[scan.nextInt()];
-		System.out.println("Digite numero do motor: M10(0), M12(1), M14(2), M16(3), M18(4), M20(5), M22(6)");
-		_motorizacao = Motorizacao.values()[scan.nextInt()];
+		
+		while(!loop)
+		{
+			try{
+				System.out.println("Digite numero correspondente ao modelo: (0)CIVIC, (1)S2000, (2)GOL");
+				_modelo = Modelo.values()[scan.nextInt()];
+				loop = true;}
+			catch(ArrayIndexOutOfBoundsException aiobe){
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
+		while(!loop)
+		{
+			try{
+				System.out.println("Digite numero correspondente ao cambio:AUTOMÁTICO(0), SEMI_AUTOMÁTICO(1), MANUAL(2)");
+				_cambio = Cambio.values()[scan.nextInt()];
+				loop = true;}
+			catch(ArrayIndexOutOfBoundsException aiobe){
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
+		while(!loop)
+		{
+			try{
+				System.out.println("Digite numero correspondente à cor: PRETO(3), BRANCO(4), PRATA(5)");
+				_cor = Cores.values()[scan.nextInt()];
+				loop = true;}
+			catch(ArrayIndexOutOfBoundsException aiobe){
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
+		while(!loop)
+		{
+			try{
+				System.out.println("Digite numero correspondente à montadora: WOLKSWAG(0), FIAT(1), CHEVROLET(2), HONDA(3)");
+				_montadora = Montadoras.values()[scan.nextInt()];
+				loop = true;}
+			catch(ArrayIndexOutOfBoundsException aiobe){
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
+		while(!loop)
+		{
+			try{
+				System.out.println("Digite numero do tipo: SEDAN(0), HATCH(1), ESPORTIVO(2)");
+				_tipo = Tipos.values()[scan.nextInt()];
+				loop = true;}
+			catch(ArrayIndexOutOfBoundsException aiobe){
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
+		while(!loop)
+		{
+			try{
+				System.out.println("Digite numero do motor: M10(0), M12(1), M14(2), M16(3), M18(4), M20(5), M22(6)");
+				_motorizacao = Motorizacao.values()[scan.nextInt()];
+				loop = true;}
+			catch(ArrayIndexOutOfBoundsException aiobe){
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
 		System.out.println("Digite o chassi");
 		_chassi = scan.next();
-		System.out.println("Digite o preço do carro");
-		_preco = scan.nextFloat();
+		
+		while(!loop)
+		{
+			try{
+				System.out.println("Digite o preço do carro");
+				_preco = scan.nextFloat();
+				loop = true;}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
 		
 		
 		Carro aux = new Carro(_chassi, _preco, _montadora, _modelo, _motorizacao, _cambio, _tipo, _cor);
