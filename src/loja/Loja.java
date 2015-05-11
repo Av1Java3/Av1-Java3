@@ -133,25 +133,130 @@ public class Loja
 		Modelo _modelo = null;
 		Tipos _tipo = null;
 		Montadoras _montadora = null;
-		
+		boolean loop = false;
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("Qual é o chassi?");
-		_chassi = scan.next();
-		System.out.println("Qual o preço?");
-		_preco = scan.nextFloat();
-		System.out.println("Qual o numero da cor: Azul(0), Verde(1), Vermelho(2)");
-		_cor = Cores.values()[scan.nextInt()];
-		System.out.println("Qual é o numero da cilindrada:C1000(0),C900(1),C850(2),C883(3),C750(4)");
-		_cilindrada = MCilindrada.values()[scan.nextInt()];
-		System.out.println("Qual é a capacidade do tanque:L12.5(0),L17(1),L17.8(2)");
-		_capTanque = MCapTanque.values()[scan.nextInt()];
-		System.out.println("Qual o numero do modelo: VMAX(3),SUPER_TENERE(4), SHADOW_750(5)");
-		_modelo = Modelo.values()[scan.nextInt()];
-		System.out.println("Qual o tipo: CRUISER(3),SPORT(4),OFFROAD(5)");
-		_tipo = Tipos.values()[scan.nextInt()];
-		System.out.println("Qual a montadora:HONDA(4),HARLEY_DAVIDSON(5),YAMAHA(6)");
-		_montadora = Montadoras.values()[scan.nextInt()];
+		while(!loop)
+		{
+			try
+			{
+				System.out.println("Qual é o chassi?");
+				_chassi = scan.next();
+				loop = true;
+			}
+			catch(ArrayIndexOutOfBoundsException aiobe)
+			{
+			System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+			
+		}loop = false;
+		
+		while(!loop)
+		{
+			try
+			{
+				System.out.println("Qual o preço?");
+				_preco = scan.nextFloat();
+				loop = true;
+			}
+			catch(ArrayIndexOutOfBoundsException aiobe)
+			{
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
+		while(!loop)
+		{
+			try
+			{
+			System.out.println("Qual o numero da cor: Azul(0), Verde(1), Vermelho(2)");
+			_cor = Cores.values()[scan.nextInt()];
+			}
+			catch(ArrayIndexOutOfBoundsException aiobe)
+			{
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
+		while(!loop)
+		{
+			try
+			{
+				System.out.println("Qual é o numero da cilindrada:C1000(0),C900(1),C850(2),C883(3),C750(4)");
+				_cilindrada = MCilindrada.values()[scan.nextInt()];
+			}
+			catch(ArrayIndexOutOfBoundsException aiobe)
+			{
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
+		while(!loop)
+		{
+			try
+			{
+				System.out.println("Qual é a capacidade do tanque:L12.5(0),L17(1),L17.8(2)");
+				_capTanque = MCapTanque.values()[scan.nextInt()];
+			}
+			catch(ArrayIndexOutOfBoundsException aiobe)
+			{
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
+		while(!loop)
+		{
+			try
+			{
+				System.out.println("Qual o numero do modelo: VMAX(3),SUPER_TENERE(4), SHADOW_750(5)");
+				_modelo = Modelo.values()[scan.nextInt()];
+			}
+			catch(ArrayIndexOutOfBoundsException aiobe)
+			{
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+
+		while(!loop)
+		{
+			try
+			{
+				System.out.println("Qual o tipo: CRUISER(3),SPORT(4),OFFROAD(5)");
+				_tipo = Tipos.values()[scan.nextInt()];
+			}
+			catch(ArrayIndexOutOfBoundsException aiobe)
+			{
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
+		while(!loop)
+		{
+			try
+			{	
+				System.out.println("Qual a montadora:HONDA(4),HARLEY_DAVIDSON(5),YAMAHA(6)");
+				_montadora = Montadoras.values()[scan.nextInt()];
+			}
+			catch(ArrayIndexOutOfBoundsException aiobe)
+			{
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
+		while(!loop)
+		{
+			try
+			{
+				System.out.println("Digite o preço da motocicleta");
+				_preco = scan.nextFloat();
+				loop = true;
+			}
+			catch(InputMismatchException ime)
+			{
+				System.out.println("Erro, favor digitar un dos numeros especificados");
+			}
+		}loop = false;
+		
 		
 		Motocicleta zxy = new Motocicleta(_chassi, _preco, _cor, _cilindrada, _capTanque, _modelo, _montadora, _tipo);
 	}
@@ -189,7 +294,7 @@ public class Loja
 			if(x.getChassi().equals(aux))
 				System.out.println("Chassi encontrado:"+x.getModelo()+" "+x.getMontadora()+" "+x.getTipo());
 			else
-				System.out.println("No Bacon for You motherfucker");
+				System.out.println("Carro não encontrado");
 		}
 	}
 	
