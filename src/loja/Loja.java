@@ -317,24 +317,85 @@ public class Loja
 	public void pesquisarCarro()
 	{
 		Scanner scan  = new Scanner(System.in);
-		System.out.println("Digite uma Cor");
-		String auxCor = scan.next();
-		System.out.println("Digite um Tipo");
-		String auxTipo = scan.next();
-		System.out.println("Digite uma Montadora");
-		String auxMontadora = scan.next();
+		ArrayList<Carro> search = new ArrayList<Carro>();
 		
 		for(Carro x : estoqueCarros)
 		{
-			if(x.getCor().toString().equals(auxCor))
-				if(x.getTipo().toString().equals(auxTipo))
-					if(x.getMontadora().toString().equals(auxMontadora))
-					{
-						System.out.println("Montadora:"+x.getMontadora()+" "+"Modelo:"+x.getModelo()+" "+"Cambio:"+x.getCambio());
-						System.out.println("Chassi:"+x.getChassi()+" "+"Preco:"+x.getPreco());
-						System.out.println("Cor:"+x.getCor()+" "+"Tipo:"+x.getTipo()+" "+"Motorizacao:"+x.getMotorizacao());
-						System.out.println("------------------------------------------------------------------------------");
-					}
+			search.add(x);
+		}
+		
+		System.out.println("Digite uma Cor. Digite 0 para pular este parametro");
+		String auxCor = scan.next().toUpperCase();
+		if(!(auxCor.equals("0")))
+		{
+			for(Carro x : search)
+			{
+				if(x.getCor().toString()!=auxCor)
+					search.remove(x);
+			}
+		}
+		
+		System.out.println("Digite uma Tipo. Digite 0 para pular este parametro");
+		String auxTipo = scan.next().toUpperCase();
+		if(!(auxTipo.equals("0")))
+		{
+			for(Carro x : search)
+			{
+				if(x.getTipo().toString()!=auxTipo)
+					search.remove(x);
+			}
+		}
+		
+		System.out.println("Digite uma Montadora. Digite 0 para pular este parametro");
+		String auxMontadora = scan.next().toUpperCase();
+		if(!(auxMontadora.equals("0")))
+		{
+			for(Carro x : search)
+			{
+				if(x.getMontadora().toString()!=auxMontadora)
+					search.remove(x);
+			}
+		}
+		
+		System.out.println("Digite uma Modelo. Digite 0 para pular este parametro");
+		String auxModelo = scan.next().toUpperCase();
+		if(!(auxModelo.equals("0")))
+		{
+			for(Carro x : search)
+			{
+				if(x.getModelo().toString()!=auxModelo)
+					search.remove(x);
+			}
+		}
+		
+		System.out.println("Digite uma Cambio. Digite 0 para pular este parametro");
+		String auxCambio = scan.next().toUpperCase();
+		if(!(auxCambio.equals("0")))
+		{
+			for(Carro x : search)
+			{
+				if(x.getCambio().toString()!=auxCambio)
+					search.remove(x);
+			}
+		}
+		
+		System.out.println("Digite uma Motorizacao, ex: M10. Digite 0 para pular este parametro");
+		String auxMotorizacao = scan.next().toUpperCase();
+		if(!(auxMotorizacao.equals("0")))
+		{
+			for(Carro x : search)
+			{
+				if(x.getMotorizacao().toString()!=auxMotorizacao)
+					search.remove(x);
+			}
+		}
+		
+		for(Carro x : search)
+		{
+			System.out.println("Montadora:"+x.getMontadora()+" "+"Modelo:"+x.getModelo()+" "+"Cambio:"+x.getCambio());
+			System.out.println("Chassi:"+x.getChassi()+" "+"Preco:"+x.getPreco());
+			System.out.println("Cor:"+x.getCor()+" "+"Tipo:"+x.getTipo()+" "+"Motorizacao:"+x.getMotorizacao());
+			System.out.println("------------------------------------------------------------------------------");
 		}
 	}
 	
