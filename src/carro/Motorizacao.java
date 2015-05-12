@@ -1,5 +1,7 @@
 package carro;
 
+//Nesta classe ficam enumerados os tipos de motorização dos carros.
+
 public enum Motorizacao 
 {
 

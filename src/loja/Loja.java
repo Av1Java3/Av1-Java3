@@ -18,15 +18,18 @@ import carro.Motorizacao;
 public class Loja
 {
 
+	//Temos valores padrões para esta variáveis.
 	String nome = "Doomhammer Motors";
 	String endereco = "Rua dos bobos n 0";
 	
+	//Criando uma ArrayList para os estoques de carros e de motos
 	ArrayList<Carro> estoqueCarros = new ArrayList<>();
 	ArrayList<Motocicleta> estoqueMotos = new ArrayList<>();
 	
 	
 	public void adicionarCarro()
 	{
+		//Estas variáveis não possuem valor inicialmente. 
 		Cambio _cambio = null;
 		Cores _cor = null;
 		Modelo _modelo=null;
@@ -37,6 +40,7 @@ public class Loja
 		float _preco = 0;
 		boolean loop = false;
 		
+		//Classe Scanner vai permitir o input do usuário.
 		Scanner scan = new Scanner(System.in);
 		
 		while(!loop)
@@ -46,9 +50,12 @@ public class Loja
 				_modelo = Modelo.values()[scan.nextInt()];
 				loop = true;}
 			catch(ArrayIndexOutOfBoundsException aiobe){
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
+		/* Estes blocos "while" vão perguntar ao usuário o que ele deseja e apresentar um
+		 * erro caso este entre com um valor diferente do esperado.
+		 */
 		
 		while(!loop)
 		{
@@ -57,7 +64,7 @@ public class Loja
 				_cambio = Cambio.values()[scan.nextInt()];
 				loop = true;}
 			catch(ArrayIndexOutOfBoundsException aiobe){
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
@@ -68,7 +75,7 @@ public class Loja
 				_cor = Cores.values()[scan.nextInt()];
 				loop = true;}
 			catch(ArrayIndexOutOfBoundsException aiobe){
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
@@ -79,7 +86,7 @@ public class Loja
 				_montadora = Montadoras.values()[scan.nextInt()];
 				loop = true;}
 			catch(ArrayIndexOutOfBoundsException aiobe){
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
@@ -90,7 +97,7 @@ public class Loja
 				_tipo = Tipos.values()[scan.nextInt()];
 				loop = true;}
 			catch(ArrayIndexOutOfBoundsException aiobe){
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
@@ -101,7 +108,7 @@ public class Loja
 				_motorizacao = Motorizacao.values()[scan.nextInt()];
 				loop = true;}
 			catch(ArrayIndexOutOfBoundsException aiobe){
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
@@ -115,11 +122,11 @@ public class Loja
 				_preco = scan.nextFloat();
 				loop = true;}
 			catch(InputMismatchException ime){
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
-		
+		//Carro aux adiciona um carro ao estoque.
 		Carro aux = new Carro(_chassi, _preco, _montadora, _modelo, _motorizacao, _cambio, _tipo, _cor);
 		estoqueCarros.add(aux);
 	}
@@ -136,6 +143,8 @@ public class Loja
 		boolean loop = false;
 		Scanner scan = new Scanner(System.in);
 		
+		//Método para adicionar motos, tal como com carros, só que com suas especificidades.
+		
 		while(!loop)
 		{
 			try
@@ -146,7 +155,7 @@ public class Loja
 			}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
-			System.out.println("Erro, favor digitar un dos numeros especificados");
+			System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 			
 		}loop = false;
@@ -161,7 +170,7 @@ public class Loja
 			}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
@@ -174,7 +183,7 @@ public class Loja
 			}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
@@ -187,7 +196,7 @@ public class Loja
 			}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
@@ -200,7 +209,7 @@ public class Loja
 			}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
@@ -213,7 +222,7 @@ public class Loja
 			}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 
@@ -226,7 +235,7 @@ public class Loja
 			}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
@@ -239,7 +248,7 @@ public class Loja
 			}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
@@ -253,7 +262,7 @@ public class Loja
 			}
 			catch(InputMismatchException ime)
 			{
-				System.out.println("Erro, favor digitar un dos numeros especificados");
+				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
 		}loop = false;
 		
@@ -261,7 +270,7 @@ public class Loja
 		Motocicleta zxy = new Motocicleta(_chassi, _preco, _cor, _cilindrada, _capTanque, _modelo, _montadora, _tipo);
 	}
 	
-	public void listarEstoquedeCarros()
+	public void listarEstoquedeCarros() //Métodos para exibir o estoque de carros
 	{
 		for (Carro x: estoqueCarros)
 		{
@@ -274,7 +283,7 @@ public class Loja
 		
 	}
 		
-	public void listarEstoquedeMotos()
+	public void listarEstoquedeMotos() //Método para exibir o estoque de motos
 	{
 		for (Motocicleta y: estoqueMotos)
 		{
@@ -283,7 +292,7 @@ public class Loja
 			System.out.println("-----------------------------------------------------------------------------------");
 		}
 	}
-	public void buscarCarro()
+	public void buscarCarro() //Método para buscar um carro pelo parâmetro de seu chassi.
 	{
 		String aux = "";
 		Scanner scan  = new Scanner(System.in);
@@ -298,7 +307,7 @@ public class Loja
 		}
 	}
 	
-	public void buscarMotocicleta()
+	public void buscarMotocicleta() //Método para buscar uma moto pelo parâmetro de seu chassi.
 	{
 		String aux = "";
 		Scanner scan  = new Scanner(System.in);
@@ -314,7 +323,7 @@ public class Loja
 		}
 	}
 	
-	public void pesquisarCarro()
+	public void pesquisarCarro() // Método para buscar carros por todos os parâmetros.
 	{
 		Scanner scan  = new Scanner(System.in);
 		ArrayList<Carro> search = new ArrayList<Carro>();
@@ -399,7 +408,7 @@ public class Loja
 		}
 	}
 	
-	public void pesquisarMotos()
+	public void pesquisarMotos() //Método para pesquisar motos por todos os seus parâmetros.
 	{
 		Scanner scan  = new Scanner(System.in);
 		System.out.println("Digite uma Cor");

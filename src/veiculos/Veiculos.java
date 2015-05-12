@@ -1,6 +1,8 @@
 package veiculos;
 
-public class Veiculos 
+//Classe abstrata pai Veículos que terá todas as variáveis herdadas por padrão.
+
+public abstract class Veiculos 
 {
 	public Cores cor;
 	public Modelo modelo;

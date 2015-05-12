@@ -4,11 +4,13 @@ import veiculos.*;
 
 public class Motocicleta extends Veiculos
 {
+	//Valores únicos para as motos.
 	MCilindrada cilindrada;
 	MCapTanque capTanque;
 	
 	public Motocicleta(String _chassi,float _preco,Cores _cor,MCilindrada _cilindrada,MCapTanque _capTanque,Modelo _modelo,Montadoras _montadora,Tipos _tipo)
 	{
+		//Dando variáveis alteráveis às motos e formas de acessá-las.
 		preco = _preco;
 		chassi = _chassi;
 		cor = _cor;

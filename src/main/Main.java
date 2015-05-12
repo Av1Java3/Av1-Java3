@@ -7,10 +7,13 @@ public class Main
 {
 	public static void main(String[] args) 
 	{	
+		//Criando o objeto da nossa loja que vai alojar todas as informações.
 		Loja doom = new Loja();
 		int opcao;
 		Scanner scan = new Scanner(System.in);
 		
+		
+		//Este bloco do vai criar um objeto carro.
 		do
 		{
 			System.out.println("Digite o numero correspondente a opção desejada");

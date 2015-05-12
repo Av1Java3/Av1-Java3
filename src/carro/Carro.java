@@ -2,12 +2,12 @@ package carro;
 
 import veiculos.*;
 
-public class Carro extends Veiculos
+public class Carro extends Veiculos //Esta classe herda veículos.
 {
-	Motorizacao motorizacao;
+	Motorizacao motorizacao; //Porém essas duas variáveis são únicas dessa classe.
 	Cambio cambio;
 
-	
+	//Este construtor irá criar valores variáveis e formas de acessá-los.
 	public Carro (String _chassi, float _preco, Montadoras _montadora, Modelo _modelo,
 	Motorizacao _motorizacao, Cambio _cambio, Tipos _tipo, Cores _cor)
 	{
