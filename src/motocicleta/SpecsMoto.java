@@ -13,8 +13,16 @@ public class SpecsMoto
 	 Tipos tipo;
 	 MCapTanque mcapTanque;
 	 MCilindrada mcilindrada;
-private SpecsMoto()
-	{}
+	 
+private SpecsMoto(Cores _cor,MCilindrada _cilindrada,MCapTanque _capTanque,Modelo _modelo,Montadoras _montadora,Tipos _tipo)
+{
+	cor = _cor;
+	modelo = _modelo;
+	montadora = _montadora;
+	tipo = _tipo;
+	mcapTanque = _capTanque;
+	mcilindrada = _cilindrada;
+}
 
 
 
