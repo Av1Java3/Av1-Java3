@@ -14,8 +14,16 @@ public class SpecsCarro
 	 Cambio cambio;
 	 Motorizacao motorizacao;
 	 
-	 private SpecsCarro()
-	 {}
+	 private SpecsCarro(Montadoras _montadora, Modelo _modelo,
+				Motorizacao _motorizacao, Cambio _cambio, Tipos _tipo, Cores _cor)
+	 {
+		 	montadora = _montadora;
+			modelo = _modelo;
+			motorizacao = _motorizacao;
+			cambio = _cambio;
+			tipo = _tipo;
+			cor = _cor;
+	 }
 
 	 
 	 

@@ -6,20 +6,15 @@ public class Carro extends Veiculos //Esta classe herda veículos.
 {
 	Motorizacao motorizacao; //Porém essas duas variáveis são únicas dessa classe.
 	Cambio cambio;
+	SpecsCarro specs;
 
-	//Este construtor irá criar valores variáveis e formas de acessá-los.
-	public Carro (String _chassi, float _preco, Montadoras _montadora, Modelo _modelo,
-	Motorizacao _motorizacao, Cambio _cambio, Tipos _tipo, Cores _cor)
+	//Construtor da classe carro.
+	public Carro (String _chassi, float _preco, SpecsCarro _specs)
 	{
 		
 		chassi = _chassi;
 		preco = _preco;
-		montadora = _montadora;
-		modelo = _modelo;
-		motorizacao = _motorizacao;
-		cambio = _cambio;
-		tipo = _tipo;
-		cor = _cor;
+		specs = _specs;
 		
 	}
 	
