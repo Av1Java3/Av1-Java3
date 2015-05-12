@@ -1,10 +1,10 @@
 package veiculos;
 
-import java.security.KeyStore.ProtectionParameter;
+
 
 //Classe abstrata pai Veículos que terá todas as variáveis herdadas por padrão.
 
-abstract class Veiculos 
+public abstract class Veiculos 
 {
 		protected Cores cor;
 		protected Modelo modelo;
@@ -17,7 +17,7 @@ abstract class Veiculos
 		
 		
 		
-		private Veiculos()
+		protected Veiculos()
 		{}
 
 
