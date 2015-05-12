@@ -50,9 +50,10 @@ public class Loja
 				_modelo = Modelo.values()[scan.nextInt()];
 				loop = true;}
 			catch(ArrayIndexOutOfBoundsException aiobe){
-				System.out.println("Erro, favor digitar um dos numeros especificados");
-			}
-		}loop = false;
+				System.out.println("Erro, favor digitar um dos numeros especificados");}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
+			}loop = false;
 		/* Estes blocos "while" vão perguntar ao usuário o que ele deseja e apresentar um
 		 * erro caso este entre com um valor diferente do esperado.
 		 */
@@ -63,6 +64,8 @@ public class Loja
 				System.out.println("Digite numero correspondente ao cambio:AUTOMÁTICO(0), SEMI_AUTOMÁTICO(1), MANUAL(2)");
 				_cambio = Cambio.values()[scan.nextInt()];
 				loop = true;}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
 			catch(ArrayIndexOutOfBoundsException aiobe){
 				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
@@ -74,6 +77,8 @@ public class Loja
 				System.out.println("Digite numero correspondente à cor: PRETO(3), BRANCO(4), PRATA(5)");
 				_cor = Cores.values()[scan.nextInt()];
 				loop = true;}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
 			catch(ArrayIndexOutOfBoundsException aiobe){
 				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
@@ -85,6 +90,8 @@ public class Loja
 				System.out.println("Digite numero correspondente à montadora: WOLKSWAG(0), FIAT(1), CHEVROLET(2), HONDA(3)");
 				_montadora = Montadoras.values()[scan.nextInt()];
 				loop = true;}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
 			catch(ArrayIndexOutOfBoundsException aiobe){
 				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
@@ -96,6 +103,8 @@ public class Loja
 				System.out.println("Digite numero do tipo: SEDAN(0), HATCH(1), ESPORTIVO(2)");
 				_tipo = Tipos.values()[scan.nextInt()];
 				loop = true;}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
 			catch(ArrayIndexOutOfBoundsException aiobe){
 				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
@@ -107,6 +116,8 @@ public class Loja
 				System.out.println("Digite numero do motor: M10(0), M12(1), M14(2), M16(3), M18(4), M20(5), M22(6)");
 				_motorizacao = Motorizacao.values()[scan.nextInt()];
 				loop = true;}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
 			catch(ArrayIndexOutOfBoundsException aiobe){
 				System.out.println("Erro, favor digitar um dos numeros especificados");
 			}
@@ -145,20 +156,10 @@ public class Loja
 		
 		//Método para adicionar motos, tal como com carros, só que com suas especificidades.
 		
-		while(!loop)
-		{
-			try
-			{
-				System.out.println("Qual é o chassi?");
-				_chassi = scan.next();
-				loop = true;
-			}
-			catch(ArrayIndexOutOfBoundsException aiobe)
-			{
-			System.out.println("Erro, favor digitar um dos numeros especificados");
-			}
+		
+		System.out.println("Qual é o chassi?");
+		_chassi = scan.next();
 			
-		}loop = false;
 		
 		while(!loop)
 		{
@@ -168,6 +169,8 @@ public class Loja
 				_preco = scan.nextFloat();
 				loop = true;
 			}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
 				System.out.println("Erro, favor digitar um dos numeros especificados");
@@ -181,6 +184,8 @@ public class Loja
 			System.out.println("Qual o numero da cor: Azul(0), Verde(1), Vermelho(2)");
 			_cor = Cores.values()[scan.nextInt()];
 			}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
 				System.out.println("Erro, favor digitar um dos numeros especificados");
@@ -194,6 +199,8 @@ public class Loja
 				System.out.println("Qual é o numero da cilindrada:C1000(0),C900(1),C850(2),C883(3),C750(4)");
 				_cilindrada = MCilindrada.values()[scan.nextInt()];
 			}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
 				System.out.println("Erro, favor digitar um dos numeros especificados");
@@ -207,6 +214,8 @@ public class Loja
 				System.out.println("Qual é a capacidade do tanque:L12.5(0),L17(1),L17.8(2)");
 				_capTanque = MCapTanque.values()[scan.nextInt()];
 			}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
 				System.out.println("Erro, favor digitar um dos numeros especificados");
@@ -220,6 +229,8 @@ public class Loja
 				System.out.println("Qual o numero do modelo: VMAX(3),SUPER_TENERE(4), SHADOW_750(5)");
 				_modelo = Modelo.values()[scan.nextInt()];
 			}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
 				System.out.println("Erro, favor digitar um dos numeros especificados");
@@ -233,6 +244,8 @@ public class Loja
 				System.out.println("Qual o tipo: CRUISER(3),SPORT(4),OFFROAD(5)");
 				_tipo = Tipos.values()[scan.nextInt()];
 			}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
 				System.out.println("Erro, favor digitar um dos numeros especificados");
@@ -246,6 +259,8 @@ public class Loja
 				System.out.println("Qual a montadora:HONDA(4),HARLEY_DAVIDSON(5),YAMAHA(6)");
 				_montadora = Montadoras.values()[scan.nextInt()];
 			}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
 			catch(ArrayIndexOutOfBoundsException aiobe)
 			{
 				System.out.println("Erro, favor digitar um dos numeros especificados");
