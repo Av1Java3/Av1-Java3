@@ -1,5 +1,6 @@
 package motocicleta;
 
+import main.Sup;
 import veiculos.Cores;
 import veiculos.Modelo;
 import veiculos.Montadoras;
@@ -11,10 +12,16 @@ public class SpecsMoto
 	 Modelo modelo;
 	 Montadoras montadora;
 	 Tipos tipo;
-	 MCapTanque mcapTanque;
-	 MCilindrada mcilindrada;
+	 CapTanque mcapTanque;
+	 Cilindrada mcilindrada;
 	 
-private SpecsMoto(Cores _cor,MCilindrada _cilindrada,MCapTanque _capTanque,Modelo _modelo,Montadoras _montadora,Tipos _tipo)
+public SpecsMoto()
+{
+	this(Sup.addCor(), Sup.addCilindrada(),Sup.addCaptanque(), Sup.addModelo(),Sup.addMontadora(),Sup.addTipo() );
+}
+	 
+private SpecsMoto(Cores _cor,Cilindrada _cilindrada,CapTanque _capTanque,Modelo _modelo,
+			Montadoras _montadora,Tipos _tipo)
 {
 	cor = _cor;
 	modelo = _modelo;
@@ -94,19 +101,19 @@ public void setTipo(Tipos tipo)
 {
 	this.tipo = tipo;
 }
-public MCapTanque getMcapTanque() 
+public CapTanque getMcapTanque() 
 {
 	return mcapTanque;
 }
-public void setMcapTanque(MCapTanque mcapTanque) 
+public void setMcapTanque(CapTanque mcapTanque) 
 {
 	this.mcapTanque = mcapTanque;
 }
-public MCilindrada getMcilindrada() 
+public Cilindrada getMcilindrada() 
 {
 	return mcilindrada;
 }
-public void setMcilindrada(MCilindrada mcilindrada) 
+public void setMcilindrada(Cilindrada mcilindrada) 
 {
 	this.mcilindrada = mcilindrada;
 }

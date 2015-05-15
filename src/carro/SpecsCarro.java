@@ -1,5 +1,6 @@
 package carro;
 
+import main.Sup;
 import veiculos.Cores;
 import veiculos.Modelo;
 import veiculos.Montadoras;
@@ -13,6 +14,11 @@ public class SpecsCarro
 	 Tipos tipo;
 	 Cambio cambio;
 	 Motorizacao motorizacao;
+	 
+	 public SpecsCarro()
+	 {
+		 this(Sup.addMontadora(), Sup.addModelo(), Sup.addMotorizacao(), Sup.addCambio(), Sup.addTipo(), Sup.addCor());
+	 }
 	 
 	 private SpecsCarro(Montadoras _montadora, Modelo _modelo,
 				Motorizacao _motorizacao, Cambio _cambio, Tipos _tipo, Cores _cor)
@@ -60,67 +66,57 @@ public class SpecsCarro
 		return true;
 	}
 
-
-
-	public Cores getCor() 
-	{
+	public Cores getCor() {
 		return cor;
 	}
 
-	public void setCor(Cores cor) 
-	{
+	public void setCor(Cores cor) {
 		this.cor = cor;
 	}
 
-	public Modelo getModelo() 
-	{
+	public Modelo getModelo() {
 		return modelo;
 	}
 
-	public void setModelo(Modelo modelo) 
-	{
+	public void setModelo(Modelo modelo) {
 		this.modelo = modelo;
 	}
 
-	public Montadoras getMontadora() 
-	{
+	public Montadoras getMontadora() {
 		return montadora;
 	}
 
-	public void setMontadora(Montadoras montadora) 
-	{
+	public void setMontadora(Montadoras montadora) {
 		this.montadora = montadora;
 	}
 
-	public Tipos getTipo() 
-	{
+	public Tipos getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(Tipos tipo) 
-	{
+	public void setTipo(Tipos tipo) {
 		this.tipo = tipo;
 	}
 
-	public Cambio getCambio() 
-	{
+	public Cambio getCambio() {
 		return cambio;
 	}
 
-	public void setCambio(Cambio cambio) 
-	{
+	public void setCambio(Cambio cambio) {
 		this.cambio = cambio;
 	}
 
-	public Motorizacao getMotorizacao() 
-	{
+	public Motorizacao getMotorizacao() {
 		return motorizacao;
 	}
 
-	public void setMotorizacao(Motorizacao motorizacao) 
-	{
+	public void setMotorizacao(Motorizacao motorizacao) {
 		this.motorizacao = motorizacao;
 	}
+	
+
+
+	
 	 
 	 
 

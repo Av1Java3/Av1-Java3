@@ -7,5 +7,19 @@ package veiculos;
 public abstract class Veiculos 
 {
 		protected float preco;
-		protected String chassi;		
+		protected String chassi;
+		public float getPreco() {
+			return preco;
+		}
+		public void setPreco(float preco) {
+			this.preco = preco;
+		}
+		public String getChassi() {
+			return chassi;
+		}
+		public void setChassi(String chassi) {
+			this.chassi = chassi;
+		}
+		
 }
+

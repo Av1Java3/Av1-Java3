@@ -5,59 +5,41 @@ import veiculos.*;
 public class Motocicleta extends Veiculos
 {
 	//Valores únicos para as motos.
-	MCilindrada cilindrada;
-	MCapTanque capTanque;
+	Cilindrada cilindrada;
+	CapTanque capTanque;
+	SpecsMoto specs;
 	
-	public Motocicleta(String _chassi,float _preco,Cores _cor,MCilindrada _cilindrada,MCapTanque _capTanque,Modelo _modelo,Montadoras _montadora,Tipos _tipo)
+	public Motocicleta(String _chassi,float _preco,SpecsMoto _specs)
 	{
 		//Dando variáveis alteráveis às motos e formas de acessá-las.
 		preco = _preco;
 		chassi = _chassi;
-		cor = _cor;
-		cilindrada = _cilindrada;
-		capTanque = _capTanque;
-		modelo = _modelo;
-		tipo = _tipo;
-		montadora = _montadora;		
-		
+		specs = _specs;
 	}
 
-
-	public float getPreco() {
-		return preco;
-	}
-
-	public String getChassi() {
-		return chassi;
-	}
-
-	
-	public Cores getCor() {
-		return cor;
-	}
-
-	
-
-	public MCilindrada getCilindrada() {
+	public Cilindrada getCilindrada() {
 		return cilindrada;
 	}
 
+	public void setCilindrada(Cilindrada cilindrada) {
+		this.cilindrada = cilindrada;
+	}
 
-	public MCapTanque getCapTanque() {
+	public CapTanque getCapTanque() {
 		return capTanque;
 	}
 
-	public Modelo getmodelo() {
-		return modelo;
+	public void setCapTanque(CapTanque capTanque) {
+		this.capTanque = capTanque;
 	}
 
-	public Montadoras getmontadora() {
-		return montadora;
+	public SpecsMoto getSpecs() {
+		return specs;
 	}
 
-	public Tipos gettipo() {
-		return tipo;
+	public void setSpecs(SpecsMoto specs) {
+		this.specs = specs;
 	}
 	
-
+	
 }

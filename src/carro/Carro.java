@@ -10,49 +10,35 @@ public class Carro extends Veiculos //Esta classe herda veículos.
 
 	//Construtor da classe carro.
 	public Carro (String _chassi, float _preco, SpecsCarro _specs)
-	{
-		
+	{		
 		chassi = _chassi;
 		preco = _preco;
-		specs = _specs;
-		
-	}
-	
-	
-	public String getChassi() {
-		return chassi;
-	}
-
-	public float getPreco() {
-		return preco;
-	}
-
-	public Montadoras getMontadora() {
-		return montadora;
-	}
-
-	public Modelo getModelo() {
-		return modelo;
+		specs = _specs;	
 	}
 
 	public Motorizacao getMotorizacao() {
 		return motorizacao;
 	}
 
+	public void setMotorizacao(Motorizacao motorizacao) {
+		this.motorizacao = motorizacao;
+	}
+
 	public Cambio getCambio() {
 		return cambio;
 	}
 
-	public Tipos getTipo() {
-		return tipo;
+	public void setCambio(Cambio cambio) {
+		this.cambio = cambio;
 	}
 
-	public Cores getCor() {
-		return cor;
+	public SpecsCarro getSpecs() {
+		return specs;
 	}
-	
-	
-	
+
+	public void setSpecs(SpecsCarro specs) {
+		this.specs = specs;
+	}
 	
 	
 }
