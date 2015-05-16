@@ -32,6 +32,7 @@ public class Loja
 		//Método para adicionar motos.		
 		SpecsMoto spec = new SpecsMoto();
 		Motocicleta aux = new Motocicleta(Sup.addChassi(), Sup.addPreco(),spec);
+		estoqueMotos.add(aux);
 	}
 	
 	public void listarEstoquedeCarros() //Métodos para exibir o estoque de carros
