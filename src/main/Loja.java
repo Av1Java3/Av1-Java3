@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import motocicleta.Motocicleta;
 import motocicleta.SpecsMoto;
+import veiculos.Cores;
 import carro.Carro;
 import carro.SpecsCarro;
 
@@ -20,12 +21,13 @@ public class Loja
 	ArrayList<Motocicleta> estoqueMotos = new ArrayList<>();
 	
 	
-	public void adicionarCarro()
+	public Carro adicionarCarro()
 	{
 		//Carro aux adiciona um carro ao estoque.
 		SpecsCarro spec = new SpecsCarro();
 		Carro aux = new Carro(Sup.addChassi(), Sup.addPreco(),spec);
-		estoqueCarros.add(aux);
+		
+		return aux;
 	}
 	public void adicionarMoto()
 	{		
@@ -94,76 +96,7 @@ public class Loja
 		Scanner scan  = new Scanner(System.in);
 		ArrayList<Carro> search = new ArrayList<Carro>();
 		
-		for(Carro x : estoqueCarros)
-		{
-			search.add(x);
-		}
-		
-		System.out.println("Digite uma Cor. Digite 0 para pular este parametro");
-		String auxCor = scan.next().toUpperCase();
-		if(!(auxCor.equals("0")))
-		{
-			for(Carro x : search)
-			{
-				if(x.getSpecs().getCor().toString()!=auxCor)
-					search.remove(x);
-			}
-		}
-		
-		System.out.println("Digite uma Tipo. Digite 0 para pular este parametro");
-		String auxTipo = scan.next().toUpperCase();
-		if(!(auxTipo.equals("0")))
-		{
-			for(Carro x : search)
-			{
-				if(x.getSpecs().getTipo().toString()!=auxTipo)
-					search.remove(x);
-			}
-		}
-		
-		System.out.println("Digite uma Montadora. Digite 0 para pular este parametro");
-		String auxMontadora = scan.next().toUpperCase();
-		if(!(auxMontadora.equals("0")))
-		{
-			for(Carro x : search)
-			{
-				if(x.getSpecs().getMontadora().toString()!=auxMontadora)
-					search.remove(x);
-			}
-		}
-		
-		System.out.println("Digite uma Modelo. Digite 0 para pular este parametro");
-		String auxModelo = scan.next().toUpperCase();
-		if(!(auxModelo.equals("0")))
-		{
-			for(Carro x : search)
-			{
-				if(x.getSpecs().getModelo().toString()!=auxModelo)
-					search.remove(x);
-			}
-		}
-		
-		System.out.println("Digite uma Cambio. Digite 0 para pular este parametro");
-		String auxCambio = scan.next().toUpperCase();
-		if(!(auxCambio.equals("0")))
-		{
-			for(Carro x : search)
-			{
-				if(x.getCambio().toString()!=auxCambio)
-					search.remove(x);
-			}
-		}
-		
-		System.out.println("Digite uma Motorizacao, ex: M10. Digite 0 para pular este parametro");
-		String auxMotorizacao = scan.next().toUpperCase();
-		if(!(auxMotorizacao.equals("0")))
-		{
-			for(Carro x : search)
-			{
-				if(x.getMotorizacao().toString()!=auxMotorizacao)
-					search.remove(x);
-			}
-		}
+		Carro fiat = adicionarCarro();
 		
 		for(Carro x : search)
 		{

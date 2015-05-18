@@ -20,7 +20,7 @@ public class SpecsCarro
 		 this(Sup.addMontadora(), Sup.addModelo(), Sup.addMotorizacao(), Sup.addCambio(), Sup.addTipo(), Sup.addCor());
 	 }
 	 
-	 private SpecsCarro(Montadoras _montadora, Modelo _modelo,
+	 public SpecsCarro(Montadoras _montadora, Modelo _modelo,
 				Motorizacao _motorizacao, Cambio _cambio, Tipos _tipo, Cores _cor)
 	 {
 		 	montadora = _montadora;

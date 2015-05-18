@@ -1,16 +1,19 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import motocicleta.CapTanque;
 import motocicleta.Cilindrada;
-import carro.Cambio;
-import carro.Motorizacao;
 import veiculos.Cores;
 import veiculos.Modelo;
 import veiculos.Montadoras;
 import veiculos.Tipos;
+import carro.Cambio;
+import carro.Carro;
+import carro.Motorizacao;
+import carro.SpecsCarro;
 
 public class Sup 
 {
@@ -180,5 +183,17 @@ public class Sup
 		aux = scan.next();
 		return aux;
 	}
+	/* METODO PARA GERAÇÃO AUTOMATICA DE CARROS(?)public static ArrayList<Carro> genCarro()
+	{
+		SpecsCarro spec1 = new SpecsCarro();
+		Carro aux1 = new Carro("ASDS234",98.00f,Specs1);
+		Carro aux2 = new Carro("ASDS264",99.00f,Specs2);
+		Carro aux3 = new Carro("ASDS274",100.00f,Specs3);
+		ArrayList<Carro> gerados = new ArrayList<>();
+		gerados.add(aux1);
+		gerados.add(aux2);
+		gerados.add(aux3);
+		
+	}*/
 }
 
