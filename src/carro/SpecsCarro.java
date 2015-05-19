@@ -4,14 +4,12 @@ import main.Sup;
 import veiculos.Cores;
 import veiculos.Modelo;
 import veiculos.Montadoras;
+import veiculos.Specs;
 import veiculos.Tipos;
 
-public class SpecsCarro 
+public class SpecsCarro extends Specs
 {
-	 Cores cor;
-	 Modelo modelo;
-	 Montadoras montadora;
-	 Tipos tipo;
+	 
 	 Cambio cambio;
 	 Motorizacao motorizacao;
 	 
