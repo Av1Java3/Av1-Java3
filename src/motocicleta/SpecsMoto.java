@@ -4,14 +4,11 @@ import main.Sup;
 import veiculos.Cores;
 import veiculos.Modelo;
 import veiculos.Montadoras;
+import veiculos.Specs;
 import veiculos.Tipos;
 
-public class SpecsMoto 
+public class SpecsMoto extends Specs
 {
-	 Cores cor;
-	 Modelo modelo;
-	 Montadoras montadora;
-	 Tipos tipo;
 	 CapTanque mcapTanque;
 	 Cilindrada mcilindrada;
 	 

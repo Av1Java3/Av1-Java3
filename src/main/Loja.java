@@ -26,7 +26,6 @@ public class Loja
 		//Carro aux adiciona um carro ao estoque.
 		SpecsCarro spec = new SpecsCarro();
 		Carro aux = new Carro(Sup.addChassi(), Sup.addPreco(),spec);
-		
 		return aux;
 	}
 	public void adicionarMoto()
