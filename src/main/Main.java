@@ -2,6 +2,9 @@ package main;
 
 import java.util.Scanner;
 
+import motocicleta.Motocicleta;
+import carro.Carro;
+
 public class Main 
 {
 	public static void main(String[] args) 
@@ -9,6 +12,8 @@ public class Main
 		//Criando o objeto da nossa loja que vai alojar todas as informações.
 		Loja doom = new Loja();
 		int opcao;
+		Carro auxCarro;
+		Motocicleta auxMoto;
 		Scanner scan = new Scanner(System.in);
 		
 		
@@ -31,9 +36,11 @@ public class Main
 		switch(opcao)
 		{
 		case 1:
-			doom.adicionarCarro();break;
+			auxCarro = doom.adicionarCarro();
+			doom.estoqueCarros.add(auxCarro);break;
 		case 2:
-			doom.adicionarMoto();break;
+			auxMoto = doom.adicionarMoto();
+			doom.estoqueMotos.add(auxMoto);break;
 		case 3:
 			doom.buscarCarro();break;
 		case 4:

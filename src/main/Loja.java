@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 import motocicleta.Motocicleta;
 import motocicleta.SpecsMoto;
-import veiculos.Cores;
 import carro.Carro;
 import carro.SpecsCarro;
 
@@ -28,12 +27,12 @@ public class Loja
 		Carro aux = new Carro(Sup.addChassi(), Sup.addPreco(),spec);
 		return aux;
 	}
-	public void adicionarMoto()
+	public Motocicleta adicionarMoto()
 	{		
 		//Método para adicionar motos.		
 		SpecsMoto spec = new SpecsMoto();
 		Motocicleta aux = new Motocicleta(Sup.addChassi(), Sup.addPreco(),spec);
-		estoqueMotos.add(aux);
+		return aux;
 	}
 	
 	public void listarEstoquedeCarros() //Métodos para exibir o estoque de carros
@@ -43,10 +42,8 @@ public class Loja
 			System.out.println("Montadora:"+x.getSpecs().getModelo()+" "+"Modelo:"+x.getSpecs().getModelo()+" "+"Cambio:"+x.getCambio());
 			System.out.println("Chassi:"+x.getChassi()+" "+"Preco:"+x.getPreco());
 			System.out.println("Cor:"+x.getSpecs().getCor()+" "+"Tipo:"+x.getSpecs().getTipo()+" "+"Motorizacao:"+x.getMotorizacao());
-			System.out.println("------------------------------------------------------------------------------");
-			
-		}
-		
+			System.out.println("------------------------------------------------------------------------------");			
+		}		
 	}
 		
 	public void listarEstoquedeMotos() //Método para exibir o estoque de motos
@@ -56,9 +53,10 @@ public class Loja
 			System.out.println("Modelo:"+y.getSpecs().getModelo()+" "+"Cor:"+y.getSpecs().getCor()+" "+"Montadora:"+y.getSpecs().getMontadora());
 			System.out.println("Chassi:"+y.getChassi()+" "+"Preco:"+y.getPreco());
 			System.out.println("Tipo:"+y.getSpecs().getTipo()+" "+"Cilindrada:"+y.getCilindrada()+" "+"Capacidade do tanque"+y.getCapTanque());
-			System.out.println("-----------------------------------------------------------------------------------");
+			System.out.println("------------------------------------------------------------------------------");	
 		}
 	}
+	
 	public void buscarCarro() //Método para buscar um carro pelo parâmetro de seu chassi.
 	{
 		String aux = "";
@@ -92,10 +90,7 @@ public class Loja
 	
 	public void pesquisarCarro() // Método para buscar carros por todos os parâmetros.
 	{
-		Scanner scan  = new Scanner(System.in);
 		ArrayList<Carro> search = new ArrayList<Carro>();
-		
-		Carro fiat = adicionarCarro();
 		
 		for(Carro x : search)
 		{
