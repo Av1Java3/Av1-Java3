@@ -1,5 +1,10 @@
 package veiculos;
 
+import motocicleta.CapTanque;
+import motocicleta.Cilindrada;
+import carro.Cambio;
+import carro.Motorizacao;
+
 public class Specs 
 {
 	
@@ -7,8 +12,36 @@ public class Specs
 	 protected Modelo modelo;
 	 protected Montadoras montadora;
 	 protected Tipos tipo;
+	 protected CapTanque captanque;
+	 protected Cilindrada cilindrada;
+	 protected Motorizacao motorizacao;
+	 protected Cambio cambio;
+
 	 
-	 
+	public CapTanque getCaptanque() {
+		return captanque;
+	}
+	public void setCaptanque(CapTanque captanque) {
+		this.captanque = captanque;
+	}
+	public Cilindrada getCilindrada() {
+		return cilindrada;
+	}
+	public void setCilindrada(Cilindrada cilindrada) {
+		this.cilindrada = cilindrada;
+	}
+	public Motorizacao getMotorizacao() {
+		return motorizacao;
+	}
+	public void setMotorizacao(Motorizacao motorizacao) {
+		this.motorizacao = motorizacao;
+	}
+	public Cambio getCambio() {
+		return cambio;
+	}
+	public void setCambio(Cambio cambio) {
+		this.cambio = cambio;
+	}
 	public Cores getCor() {
 		return cor;
 	}

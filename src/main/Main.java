@@ -36,11 +36,9 @@ public class Main
 		switch(opcao)
 		{
 		case 1:
-			auxCarro = doom.adicionarCarro();
-			doom.estoqueCarros.add(auxCarro);break;
+			doom.estoque.add(doom.adicionarCarro());break;
 		case 2:
-			auxMoto = doom.adicionarMoto();
-			doom.estoqueMotos.add(auxMoto);break;
+			doom.estoque.add(doom.adicionarMoto());break;
 		case 3:
 			doom.buscarCarro();break;
 		case 4:

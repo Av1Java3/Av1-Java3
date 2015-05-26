@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import motocicleta.Motocicleta;
 import motocicleta.SpecsMoto;
+import veiculos.Veiculos;
 import carro.Carro;
 import carro.SpecsCarro;
 
@@ -16,8 +17,8 @@ public class Loja
 	String endereco = "Rua dos bobos n 0";
 	
 	//Criando uma ArrayList para os estoques de carros e de motos
-	ArrayList<Carro> estoqueCarros = new ArrayList<>();
-	ArrayList<Motocicleta> estoqueMotos = new ArrayList<>();
+	
+	ArrayList<Veiculos> estoque = new ArrayList<>();
 	
 	
 	public Carro adicionarCarro()
@@ -35,93 +36,72 @@ public class Loja
 		return aux;
 	}
 	
-	public void listarEstoquedeCarros() //Métodos para exibir o estoque de carros
+	public void listarEstoque() //Métodos para exibir o estoque de carros
 	{
-		for (Carro x: estoqueCarros)
-		{
-			System.out.println("Montadora:"+x.getSpecs().getModelo()+" "+"Modelo:"+x.getSpecs().getModelo()+" "+"Cambio:"+x.getCambio());
-			System.out.println("Chassi:"+x.getChassi()+" "+"Preco:"+x.getPreco());
-			System.out.println("Cor:"+x.getSpecs().getCor()+" "+"Tipo:"+x.getSpecs().getTipo()+" "+"Motorizacao:"+x.getMotorizacao());
-			System.out.println("------------------------------------------------------------------------------");			
-		}		
-	}
-		
-	public void listarEstoquedeMotos() //Método para exibir o estoque de motos
-	{
-		for (Motocicleta y: estoqueMotos)
-		{
-			System.out.println("Modelo:"+y.getSpecs().getModelo()+" "+"Cor:"+y.getSpecs().getCor()+" "+"Montadora:"+y.getSpecs().getMontadora());
-			System.out.println("Chassi:"+y.getChassi()+" "+"Preco:"+y.getPreco());
-			System.out.println("Tipo:"+y.getSpecs().getTipo()+" "+"Cilindrada:"+y.getCilindrada()+" "+"Capacidade do tanque"+y.getCapTanque());
-			System.out.println("------------------------------------------------------------------------------");	
-		}
-	}
-	
-	public void buscarCarro() //Método para buscar um carro pelo parâmetro de seu chassi.
-	{
-		String aux = "";
-		Scanner scan  = new Scanner(System.in);
-		System.out.println("Insira chassi");
-		aux = scan.next();
-		for(Carro x: estoqueCarros)
-		{
-			if(x.getChassi().equals(aux))
-				System.out.println("Chassi encontrado:"+x.getSpecs().getModelo()+" "+x.getSpecs().getMontadora()+" "+x.getSpecs().getTipo());
-			else
-				System.out.println("Carro não encontrado");
-		}
-	}
-	
-	public void buscarMotocicleta() //Método para buscar uma moto pelo parâmetro de seu chassi.
-	{
-		String aux = "";
-		Scanner scan  = new Scanner(System.in);
-		System.out.println("Insira chassi");
-		aux = scan.next();
-		for(Motocicleta x: estoqueMotos)
-		{
-			if(x.getChassi().equals(aux))
-				System.out.println("Chassi encontrado:"+x.getSpecs().getModelo()+" "+x.getSpecs().getMontadora()+" "+x.getSpecs().getTipo());
 
-			else
-				System.out.println("Chassi não encontrado");
+		for (Veiculos x: estoque)
+		{
+			if(x instanceof Carro)
+			{
+				System.out.println("Montadora:"+x.getSpecs().getModelo()+" "+"Modelo:"+x.getSpecs().getModelo()+" "+"Cambio:"+x.getSpecs().getCambio());
+				System.out.println("Chassi:"+x.getChassi()+" "+"Preco:"+x.getPreco());
+				System.out.println("Cor:"+x.getSpecs().getCor()+" "+"Tipo:"+x.getSpecs().getTipo()+" "+"Motorizacao:"+x.getSpecs().getMotorizacao());
+				System.out.println("------------------------------------------------------------------------------");			
+			}
+			else if(x instanceof Motocicleta)
+			{
+				System.out.println("Modelo:"+x.getSpecs().getModelo()+" "+"Cor:"+x.getSpecs().getCor()+" "+"Montadora:"+x.getSpecs().getMontadora());
+				System.out.println("Chassi:"+x.getChassi()+" "+"Preco:"+x.getPreco());
+				System.out.println("Tipo:"+x.getSpecs().getTipo()+" "+"Cilindrada:"+x.getSpecs().getCilindrada()+" "+"Capacidade do tanque"+x.getSpecs().getCaptanque());
+				System.out.println("------------------------------------------------------------------------------");	
+
+			}
+		}
+	}
+
+	
+	public void buscarVeiculo() //Método para buscar um carro pelo parâmetro de seu chassi.
+	{
+		String aux = "";
+		Scanner scan  = new Scanner(System.in);
+		System.out.println("Insira chassi");
+		aux = scan.next();
+		for(Veiculos x: estoque)
+		{
+			if(x instanceof Carro)
+			{
+				if(x.getChassi().equals(aux))
+					System.out.println("Chassi encontrado:"+x.getSpecs().getModelo()+" "+x.getSpecs().getMontadora()+" "
+				+x.getSpecs().getTipo()+" "+x.getSpecs().getCambio()+" "+x.getSpecs().getMotorizacao());
+				else
+					System.out.println("Carro não encontrado");
+			}
+			else if(x instanceof Motocicleta)
+			{
+				x = (Motocicleta)x;
+				if(x.getChassi().equals(aux))
+					System.out.println("Chassi encontrado:"+x.getSpecs().getModelo()+" "+x.getSpecs().getMontadora()+" "
+				+x.getSpecs().getTipo()+" "+x.getSpecs().getCilindrada()+" "+x.getSpecs().getCaptanque());
+				else
+					System.out.println("Moto não encontrado");
+			}
+
 		}
 	}
 	
-	public void pesquisarCarro() // Método para buscar carros por todos os parâmetros.
-	{
-		ArrayList<Carro> search = new ArrayList<Carro>();
 		
-		for(Carro x : search)
+	public void pesquisarVeiculo() // Método para buscar carros por todos os parâmetros.
+	{
+		ArrayList<Veiculos> search = new ArrayList<>();
+		
+		for(Veiculos x : search)
 		{
-			System.out.println("Montadora:"+x.getSpecs().getMontadora()+" "+"Modelo:"+x.getSpecs().getModelo()+" "+"Cambio:"+x.getCambio());
+			System.out.println("Montadora:"+x.getSpecs().getMontadora()+" "+"Modelo:"+x.getSpecs().getModelo()+" "+"Cambio:"+x.getSpecs().getCambio());
 			System.out.println("Chassi:"+x.getChassi()+" "+"Preco:"+x.getPreco());
-			System.out.println("Cor:"+x.getSpecs().getCor()+" "+"Tipo:"+x.getSpecs().getTipo()+" "+"Motorizacao:"+x.getMotorizacao());
+			System.out.println("Cor:"+x.getSpecs().getCor()+" "+"Tipo:"+x.getSpecs().getTipo()+" "+"Motorizacao:"+x.getSpecs().getMotorizacao());
 			System.out.println("------------------------------------------------------------------------------");
 		}
 	}
 	
-	public void pesquisarMotos() //Método para pesquisar motos por todos os seus parâmetros.
-	{
-		Scanner scan  = new Scanner(System.in);
-		System.out.println("Digite uma Cor");
-		String auxMCor = scan.next();
-		System.out.println("Digite um Tipo");
-		String auxMTipo = scan.next();
-		System.out.println("Digite uma Montadora");
-		String auxMmontadora = scan.next();
-		
-		for(Motocicleta y : estoqueMotos)
-		{
-			if(y.getSpecs().getCor().toString().equals(auxMCor))
-				if(y.getSpecs().getTipo().toString().equals(auxMTipo))
-					if(y.getSpecs().getMontadora().toString().equals(auxMmontadora))
-					{
-						System.out.println("Modelo:"+y.getSpecs().getModelo()+" "+"Cor:"+y.getSpecs().getCor()+" "+"Montadora:"+y.getSpecs().getMontadora());
-						System.out.println("Tipo:"+y.getSpecs().getTipo()+" "+"Cilindrada:"+y.getCilindrada()+" "+"Capacidade do tanque"+y.getCapTanque());
-						System.out.println("-----------------------------------------------------------------------------------");
-					}
-		}
 	}
-	
-}
+

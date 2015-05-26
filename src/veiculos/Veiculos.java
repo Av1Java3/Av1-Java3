@@ -6,8 +6,16 @@ package veiculos;
 
 public abstract class Veiculos 
 {
+	
 		protected float preco;
 		protected String chassi;
+		protected Specs specs;
+		public Specs getSpecs() {
+			return specs;
+		}
+		public void setSpecs(Specs specs) {
+			this.specs = specs;
+		}
 		public float getPreco() {
 			return preco;
 		}
