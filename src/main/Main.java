@@ -40,17 +40,13 @@ public class Main
 		case 2:
 			doom.estoque.add(doom.adicionarMoto());break;
 		case 3:
-			doom.buscarCarro();break;
+			doom.buscarVeiculo();break;
 		case 4:
-			doom.buscarMotocicleta();break;
+			doom.listarEstoque();break;
 		case 5:
-			doom.listarEstoquedeCarros();break;
+			doom.listarEstoque();break;
 		case 6:
-			doom.listarEstoquedeMotos();break;
-		case 7:
-			doom.pesquisarCarro();break;
-		case 8:
-			doom.pesquisarMotos();break;
+			doom.pesquisarVeiculo();break;
 		default:
 			System.out.println("Opção inválida. Escolha uma das opções listadas.");
 			break;
