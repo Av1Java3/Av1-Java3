@@ -18,8 +18,8 @@ public class Main
 			System.out.println("Digite o numero correspondente a opção desejada");
 			System.out.println("1 = Adicionar Veiculo");
 			System.out.println("2 = Buscar Veiculo por Chassi");
-			System.out.println("4 = Pesquisar Veiculo por parametros");
-			System.out.println("5 = Listar Estoque");
+			System.out.println("3 = Pesquisar Veiculo por parametros");
+			System.out.println("4 = Listar Estoque");
 			System.out.println("0 = EXIT");
 			
 			opcao = scan.nextInt();
@@ -31,10 +31,8 @@ public class Main
 		case 2:
 			doom.buscarVeiculo();break;
 		case 3:
-			doom.buscarVeiculo();break;
-		case 4:
 			doom.pesquisarEstoque();break;
-		case 5:
+		case 4:
 			doom.listarEstoque();break;
 		case 0:
 			System.out.println("Yippee ki-yay, motherfucker!");break;
