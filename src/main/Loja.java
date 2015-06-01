@@ -3,11 +3,7 @@ package main;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import motocicleta.Motocicleta;
-import motocicleta.SpecsMoto;
 import veiculos.Veiculos;
-import carro.Carro;
-import carro.SpecsCarro;
 
 public class Loja
 {
@@ -18,90 +14,85 @@ public class Loja
 	
 	//Criando uma ArrayList para os estoques de carros e de motos
 	
-	ArrayList<Veiculos> estoque = new ArrayList<>();
+	ArrayList<Veiculos> estoque;
 	
-	
-	public Carro adicionarCarro()
+	public Loja()
 	{
-		//Carro aux adiciona um carro ao estoque.
-		SpecsCarro spec = new SpecsCarro();
-		Carro aux = new Carro(Sup.addChassi(), Sup.addPreco(),spec);
-		return aux;
-	}
-	public Motocicleta adicionarMoto()
-	{		
-		//Método para adicionar motos.		
-		SpecsMoto spec = new SpecsMoto();
-		Motocicleta aux = new Motocicleta(Sup.addChassi(), Sup.addPreco(),spec);
-		return aux;
+		estoque = new ArrayList<>();
 	}
 	
-	public void listarEstoque() //Métodos para exibir o estoque de carros
+	//fuck this shit i am bored
+	public void buscarVeiculo()
 	{
-
-		for (Veiculos x: estoque)
-		{
-			if(x instanceof Carro)
-			{
-				System.out.println("Montadora:"+x.getSpecs().getModelo()+" "+"Modelo:"+x.getSpecs().getModelo()+" "+"Cambio:"+x.getSpecs().getCambio());
-				System.out.println("Chassi:"+x.getChassi()+" "+"Preco:"+x.getPreco());
-				System.out.println("Cor:"+x.getSpecs().getCor()+" "+"Tipo:"+x.getSpecs().getTipo()+" "+"Motorizacao:"+x.getSpecs().getMotorizacao());
-				System.out.println("------------------------------------------------------------------------------");			
-			}
-			else if(x instanceof Motocicleta)
-			{
-				System.out.println("Modelo:"+x.getSpecs().getModelo()+" "+"Cor:"+x.getSpecs().getCor()+" "+"Montadora:"+x.getSpecs().getMontadora());
-				System.out.println("Chassi:"+x.getChassi()+" "+"Preco:"+x.getPreco());
-				System.out.println("Tipo:"+x.getSpecs().getTipo()+" "+"Cilindrada:"+x.getSpecs().getCilindrada()+" "+"Capacidade do tanque"+x.getSpecs().getCaptanque());
-				System.out.println("------------------------------------------------------------------------------");	
-
-			}
-		}
-	}
-
-	
-	public void buscarVeiculo() //Método para buscar um carro pelo parâmetro de seu chassi.
-	{
-		String aux = "";
-		Scanner scan  = new Scanner(System.in);
-		System.out.println("Insira chassi");
-		aux = scan.next();
+		String aux = Sup.addChassi();
+		
 		for(Veiculos x: estoque)
 		{
-			if(x instanceof Carro)
+			if(x.getChassi().equals(aux))
 			{
-				if(x.getChassi().equals(aux))
-					System.out.println("Chassi encontrado:"+x.getSpecs().getModelo()+" "+x.getSpecs().getMontadora()+" "
-				+x.getSpecs().getTipo()+" "+x.getSpecs().getCambio()+" "+x.getSpecs().getMotorizacao());
-				else
-					System.out.println("Carro não encontrado");
+				Sup.printVeiculo(x);
 			}
-			else if(x instanceof Motocicleta)
-			{
-				x = (Motocicleta)x;
-				if(x.getChassi().equals(aux))
-					System.out.println("Chassi encontrado:"+x.getSpecs().getModelo()+" "+x.getSpecs().getMontadora()+" "
-				+x.getSpecs().getTipo()+" "+x.getSpecs().getCilindrada()+" "+x.getSpecs().getCaptanque());
-				else
-					System.out.println("Moto não encontrado");
-			}
-
 		}
 	}
-	
-		
-	public void pesquisarVeiculo() // Método para buscar carros por todos os parâmetros.
+	public void listarEstoque()
 	{
-		ArrayList<Veiculos> search = new ArrayList<>();
-		
-		for(Veiculos x : search)
+		for(Veiculos x : estoque)
 		{
-			System.out.println("Montadora:"+x.getSpecs().getMontadora()+" "+"Modelo:"+x.getSpecs().getModelo()+" "+"Cambio:"+x.getSpecs().getCambio());
-			System.out.println("Chassi:"+x.getChassi()+" "+"Preco:"+x.getPreco());
-			System.out.println("Cor:"+x.getSpecs().getCor()+" "+"Tipo:"+x.getSpecs().getTipo()+" "+"Motorizacao:"+x.getSpecs().getMotorizacao());
-			System.out.println("------------------------------------------------------------------------------");
+			Sup.printVeiculo(x);
 		}
 	}
-	
+	public void pesquisarEstoque()
+	{
+		Veiculos search = new Veiculos();
+		int aux;
+		
+		
+		
+		
+		/*int opcao;
+		Scanner scan = new Scanner(System.in);
+		
+		do
+		{
+			System.out.println("Digite o numero correspondente ao parametro que deseja procurar. ");
+			System.out.println("1 = Tipo de Veiculo");
+			System.out.println("2 = CapTanque (somente Motos)");
+			System.out.println("3 = Cilindrada (somente Motos)");
+			System.out.println("4 = Cambio (somente carros)");
+			System.out.println("5 = Motorizacao (somente carros)");
+			System.out.println("6 = Cor");
+			System.out.println("7 = Modelo");
+			System.out.println("8 = Montadora");
+			System.out.println("9 = Tipo");
+			System.out.println("10 = Modelo");
+			System.out.println("0 = EXIT");
+			
+			opcao = scan.nextInt();
+			
+		switch(opcao)
+		{
+		case 1:
+			search.setMapa("TipoVeiculo", Sup.addTipoVeiculo());break;
+		case 2:
+			search.setMapa("CapTanque", Sup.addCaptanque());break;
+		case 3:
+			search.setMapa("TipoVeiculo", Sup.addTipoVeiculo());break;
+		case 4:
+			search.setMapa("TipoVeiculo", Sup.addTipoVeiculo());break;
+		case 5:
+			search.setMapa("TipoVeiculo", Sup.addTipoVeiculo());break;
+		case 6:
+			search.setMapa("TipoVeiculo", Sup.addTipoVeiculo());break;
+		case 7:
+		case 0:
+			System.out.println("Yippee ki-yay, motherfucker!");break;
+		default:
+			System.out.println("Opção inválida. Escolha uma das opções listadas.");
+			break;
+		}
+			
+		} while (!(opcao ==0));*/
+		
+		
 	}
-
+}

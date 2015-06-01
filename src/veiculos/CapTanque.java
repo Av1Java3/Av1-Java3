@@ -1,4 +1,4 @@
-package motocicleta;
+package veiculos;
 
 //Esta classe enumera os tipos de capacidade de tanque de cada moto.
 

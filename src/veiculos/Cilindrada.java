@@ -1,4 +1,4 @@
-package motocicleta;
+package veiculos;
 
 //Esta classe enumera todos os tipos de cilindradas usadas por motos.
 

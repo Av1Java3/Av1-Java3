@@ -1,19 +1,18 @@
 package main;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import motocicleta.CapTanque;
-import motocicleta.Cilindrada;
+import veiculos.Cambio;
+import veiculos.CapTanque;
+import veiculos.Cilindrada;
 import veiculos.Cores;
 import veiculos.Modelo;
 import veiculos.Montadoras;
+import veiculos.Motorizacao;
+import veiculos.TipoVeiculo;
 import veiculos.Tipos;
-import carro.Cambio;
-import carro.Carro;
-import carro.Motorizacao;
-import carro.SpecsCarro;
+import veiculos.Veiculos;
 
 public class Sup 
 {
@@ -21,6 +20,33 @@ public class Sup
 	static Scanner scan = new Scanner(System.in);
 	
 	
+	
+	public static void printVeiculo(Veiculos x)
+	{
+		System.out.println(x.getMapa().toString());
+	}	
+	public static Veiculos addVeiculo()
+	{
+		Veiculos aux = new Veiculos();
+		
+		return aux;
+	}	
+	public static TipoVeiculo addTipoVeiculo()
+	{
+		TipoVeiculo aux = null;
+		while(!loop)
+		{
+			try{
+				System.out.println("Digite numero correspondente ao modelo: (0)CARRO, (1)MOTOCICLETA");
+				aux = TipoVeiculo.values()[scan.nextInt()];
+				loop = true;}
+			catch(ArrayIndexOutOfBoundsException aiobe){
+				System.out.println("Erro, favor digitar um dos numeros especificados");}
+			catch(InputMismatchException ime){
+				System.out.println("Erro, voce digitou algo diferente de um numero");}
+		}loop = false;
+		return aux;
+	}
 	public static Modelo addModelo()
 	{
 		Modelo aux = null;
@@ -37,7 +63,6 @@ public class Sup
 		}loop = false;
 		return aux;
 	}
-	
 	public static Cores addCor()
 	{
 		Cores aux = null;
@@ -54,7 +79,6 @@ public class Sup
 		}loop = false;
 		return aux;
 	}
-	
 	public static Cambio addCambio()
 	{
 		Cambio aux = null;
@@ -183,7 +207,7 @@ public class Sup
 		aux = scan.next();
 		return aux;
 	}
-	/* METODO PARA GERAÇÃO AUTOMATICA DE CARROS(?)public static ArrayList<Carro> genCarro()
+	/* METODO PARA GERAÇÃO AUTOMATICA DE CARROS(?)public static ArrayList<Carro> genCarro() FUCKING DREAM
 	{
 		SpecsCarro spec1 = new SpecsCarro();
 		Carro aux1 = new Carro("ASDS234",98.00f,Specs1);

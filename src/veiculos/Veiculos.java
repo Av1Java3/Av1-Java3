@@ -1,56 +1,84 @@
 package veiculos;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import main.Sup;
+
 
 
 //Classe abstrata pai Veículos que terá todas as variáveis herdadas por padrão.
 
-public abstract class Veiculos 
+public class Veiculos 
 {
 	
-		protected float preco;
-		protected String chassi;
-		protected Specs specs;
-		public Specs getSpecs() {
-			return specs;
+		private float preco;
+		private String chassi;
+		private HashMap<String, Enum> mapa;
+		
+		
+		
+		public Veiculos()
+		{
+			 mapa = new HashMap<String,Enum>();
+			 
+			 mapa.put("TipoVeiculo",Sup.addTipoVeiculo());
+			 
+			 if(mapa.containsValue(TipoVeiculo.CARRO))
+			 {
+				 mapa.put("Cambio", Sup.addCambio());
+				 mapa.put("Motorizacao",Sup.addMotorizacao());
+			 }
+			 else if(mapa.containsValue(TipoVeiculo.MOTO))
+			 {
+				 mapa.put("Cilindrada", Sup.addCilindrada());
+				 mapa.put("CapTanque",Sup.addCaptanque());
+			 }	 
+			 mapa.put("Cores",Sup.addCor());
+			 mapa.put("Modelo",Sup.addModelo());
+			 mapa.put("montadoras",Sup.addMontadora());
+			 mapa.put("Tipo",Sup.addTipo());
+			 
+			 setPreco(Sup.addPreco());
+			 setChassi(Sup.addChassi());
 		}
-		public void setSpecs(Specs specs) {
-			this.specs = specs;
-		}
+
+
+
 		public float getPreco() {
 			return preco;
 		}
+
+
+
 		public void setPreco(float preco) {
 			this.preco = preco;
 		}
+
+
+
 		public String getChassi() {
 			return chassi;
 		}
+
+
+
 		public void setChassi(String chassi) {
 			this.chassi = chassi;
 		}
-		
-		
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (!(obj instanceof Veiculos))
-				return false;
-			Veiculos other = (Veiculos) obj;
-			if (chassi == null) {
-				if (other.chassi != null)
-					return false;
-			} else if (!chassi.equals(other.chassi))
-				return false;
-			if (Float.floatToIntBits(preco) != Float
-					.floatToIntBits(other.preco))
-				return false;
-			return true;
+
+
+
+		public HashMap<String, Enum> getMapa() {
+			return mapa;
+		}
+
+
+
+		public void setMapa(HashMap<String, Enum> mapa) {
+			this.mapa = mapa;
 		}
 		
 		
 		
 }
-
