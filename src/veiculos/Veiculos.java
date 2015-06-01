@@ -75,8 +75,8 @@ public class Veiculos
 
 
 
-		public void setMapa(HashMap<String, Enum> mapa) {
-			this.mapa = mapa;
+		public void setMapa(String x, Enum y) {
+			this.mapa.put(x,y);
 		}
 		
 		

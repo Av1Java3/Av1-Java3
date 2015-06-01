@@ -45,11 +45,7 @@ public class Loja
 	{
 		Veiculos search = new Veiculos();
 		int aux;
-		
-		
-		
-		
-		/*int opcao;
+		int opcao;
 		Scanner scan = new Scanner(System.in);
 		
 		do
@@ -65,7 +61,7 @@ public class Loja
 			System.out.println("8 = Montadora");
 			System.out.println("9 = Tipo");
 			System.out.println("10 = Modelo");
-			System.out.println("0 = EXIT");
+			System.out.println("0 = Para pesquisar com os parametros escolhidos");
 			
 			opcao = scan.nextInt();
 			
@@ -76,14 +72,21 @@ public class Loja
 		case 2:
 			search.setMapa("CapTanque", Sup.addCaptanque());break;
 		case 3:
-			search.setMapa("TipoVeiculo", Sup.addTipoVeiculo());break;
+			search.setMapa("Cilindrada", Sup.addCilindrada());break;
 		case 4:
-			search.setMapa("TipoVeiculo", Sup.addTipoVeiculo());break;
+			search.setMapa("Cambio", Sup.addCambio());break;
 		case 5:
-			search.setMapa("TipoVeiculo", Sup.addTipoVeiculo());break;
+			search.setMapa("Motorizacao", Sup.addMotorizacao());break;
 		case 6:
-			search.setMapa("TipoVeiculo", Sup.addTipoVeiculo());break;
+			search.setMapa("Cor", Sup.addCor());break;
 		case 7:
+			search.setMapa("Modelo", Sup.addModelo());break;
+		case 8:
+			search.setMapa("Montadora", Sup.addMontadora());break;
+		case 9:
+			search.setMapa("Tipo", Sup.addTipo());break;
+		case 10:
+			search.setMapa("Modelo", Sup.addModelo());break;
 		case 0:
 			System.out.println("Yippee ki-yay, motherfucker!");break;
 		default:
@@ -91,8 +94,11 @@ public class Loja
 			break;
 		}
 			
-		} while (!(opcao ==0));*/
+		} while (!(opcao ==0));
 		
-		
+		for(Veiculos x : estoque)
+		{
+			x.getMapa().equals(search.getMapa());
+		}
 	}
 }
